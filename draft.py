@@ -10,7 +10,11 @@ kwargs = {
     "originated_at": "רעננה",
     "date": datetime.date(2023,2, 21),
     "start_hour": 20,
-    "end_hour": 21
+    "end_hour": 21,
+    # "line_refs": "7700"
+    "gtfs_route_mkt": "19047",
+    # filter by specific gtfs_route_ids
+    "gtfs_route_id": 2291584
     }
 # iterate get
 def get_gtfs_ride_stop_query_params():
@@ -19,6 +23,8 @@ def get_gtfs_ride_stop_query_params():
     originated_at = "רעננה"
     date = datetime.date(2023,2, 21)
     start_hour, end_hour = 20,21 
+    gtfs_route_mkt = "19047"
+    gtfs_route_id = 2291584
     recorded_at_time_from = datetime.datetime.combine(date, datetime.time(start_hour), datetime.timezone.utc)
     recorded_at_time_to = datetime.datetime.combine(date, datetime.time(end_hour, 59, 59), datetime.timezone.utc)
     return {
@@ -34,7 +40,8 @@ def get_gtfs_ride_stop_query_params():
         "gtfs_route__date": date,
         "gtfs_route__route_short_name": line_short_name,
         # "gtfs_route__route_long_name": "string",
-        # "gtfs_route__route_mkt": "string",
+        "gtfs_route__route_mkt": gtfs_route_mkt,
+        "gtfs_ride__gtfs_route_id": gtfs_route_id,
         # "gtfs_route__route_direction": "string",
         # "gtfs_route__route_alternative": "string",
         "gtfs_route__agency_name": agency,
@@ -43,20 +50,24 @@ def get_gtfs_ride_stop_query_params():
   }
 
 
-def get_gtfs_ride_query_params(line_short_name, agency, originated_at, date, start_hour, end_hour):
+def get_gtfs_ride_query_params(line_short_name, agency, originated_at, date, start_hour, end_hour,line_refs=None,gtfs_route_mkt=None,gtfs_ride_id=None):
     return {
-        "gtfs_ride__start_time_from": datetime.datetime.combine(date, datetime.time(start_hour), datetime.timezone.utc),
-        "gtfs_ride__start_time_to": datetime.datetime.combine(date, datetime.time(end_hour, 59, 59), datetime.timezone.utc),
+        "start_time_from": datetime.datetime.combine(date, datetime.time(start_hour), datetime.timezone.utc),
+        "start_time_to": datetime.datetime.combine(date, datetime.time(end_hour, 59, 59), datetime.timezone.utc),
         "gtfs_stop__city": originated_at,
         "gtfs_route__route_short_name": line_short_name,
         "gtfs_route__agency_name": agency,
+        "gtfs_route__line_refs": line_refs,
+        "gtfs_route__route_mkt": gtfs_route_mkt,
+        "order_by": "start_time",
+        "gtfs_route_id": gtfs_ride_id
     }
         
 
 
 close_gtfs_rides = list(stride.iterate('/gtfs_rides/list',params=get_gtfs_ride_query_params(**kwargs),limit=TOP_FORWARD_STATIONS))
 
-close_gtfs_rides_hours = [ride["start_time"] for ride in close_gtfs_rides]
+close_gtfs_rides_hours = list(set([ride["start_time"] for ride in close_gtfs_rides]))
 
 gtfs_ride_stops = list(stride.iterate('/gtfs_ride_stops/list',params=get_gtfs_ride_stop_query_params(),limit=TOP_FORWARD_STATIONS))
 lon_lat_lists = [{"lon": stop["gtfs_stop__lon"],"lat": stop["gtfs_stop__lat"]} for stop in gtfs_ride_stops]
