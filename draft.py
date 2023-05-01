@@ -50,7 +50,7 @@ def get_gtfs_ride_stop_query_params():
   }
 
 
-def get_gtfs_ride_query_params(line_short_name, agency, originated_at, date, start_hour, end_hour,line_refs=None,gtfs_route_mkt=None,gtfs_ride_id=None):
+def get_gtfs_ride_query_params(line_short_name, agency, originated_at, date, start_hour, end_hour,line_refs=None,gtfs_route_mkt=None,gtfs_route_id=None):
     return {
         "start_time_from": datetime.datetime.combine(date, datetime.time(start_hour), datetime.timezone.utc),
         "start_time_to": datetime.datetime.combine(date, datetime.time(end_hour, 59, 59), datetime.timezone.utc),
@@ -60,7 +60,7 @@ def get_gtfs_ride_query_params(line_short_name, agency, originated_at, date, sta
         "gtfs_route__line_refs": line_refs,
         "gtfs_route__route_mkt": gtfs_route_mkt,
         "order_by": "start_time",
-        "gtfs_route_id": gtfs_ride_id
+        "gtfs_route_id": gtfs_route_id
     }
         
 
@@ -99,7 +99,8 @@ def main():
   print(list(siri_records))
   # print(list(close_gtfs_rides))
 
-
+if __name__ == '__main__':
+  main()
 # the sorting via the recorded_at_time is problematic
 # there are some records that are listed under 2 separate snapshots with the same recorded_at_time
 
