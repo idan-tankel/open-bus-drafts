@@ -16,8 +16,8 @@ kwargs = {
     "agency": "מטרופולין",
     "originated_at": "רעננה",
     "date": datetime.date(2023, 2, 21),
-    "start_hour": 20,
-    "end_hour": 21,
+    "start_hour": 6,
+    "end_hour": 9,
     # "line_refs": "7700"
     "gtfs_route_mkt": "19047",
     # filter by specific gtfs_route_ids
@@ -36,7 +36,7 @@ def get_gtfs_ride_stop_query_params():
     agency = "מטרופולין"
     originated_at = "רעננה"
     date = datetime.date(2023, 2, 21)
-    start_hour, end_hour = 20, 21
+    start_hour, end_hour = 6, 9
     gtfs_route_mkt = "19047"
     gtfs_route_id = 2291584
     recorded_at_time_from = datetime.datetime.combine(
@@ -101,7 +101,7 @@ lon_lat_first_stop = lon_lat_lists[0]
 
 def get_siri_query_params(line_refs, operator_refs):
     date = datetime.date(2023, 2, 20)
-    start_hour, end_hour = 22, 23
+    start_hour, end_hour = 6, 9
     recorded_at_time_from = datetime.datetime.combine(
         date, datetime.time(start_hour), datetime.timezone.utc)
     recorded_at_time_to = datetime.datetime.combine(
@@ -136,16 +136,16 @@ def create_map(path, data):
     'darkpurple']
     if not data.empty:
         df = data[['lat', 'lon', 'recorded_at_time',
-                   "siri_ride__vehicle_ref","siri_route__line_ref"]]
+                   "siri_ride__vehicle_ref","siri_route__line_ref","siri_ride__scheduled_start_time"]]
 
         map = folium.Map(location=[df.iloc[0]['lat'], df.iloc[0]['lon']],
-                         names=['lat', 'lon', 'recorded_at_time', "siri_ride__vehicle_ref",'siri_route__line_ref'], max_zoom=21)
+                         names=['lat', 'lon', 'recorded_at_time', "siri_ride__vehicle_ref",'siri_route__line_ref','siri_ride__scheduled_start_time'], max_zoom=21)
 
         for (name,group),color in zip(df.groupby("siri_ride__vehicle_ref"),colors):
             print(name)
         # Loop through the DataFrame and add a marker for each location with the recorded time
             for index, row in group.iterrows(): 
-                popup_text = f"Recorded at: {row['recorded_at_time']}<br>Lat: {row['lat']}<br>Lon: {row['lon']}<br>Plate: {row['siri_ride__vehicle_ref']}<br>{row['siri_route__line_ref']}"
+                popup_text = f"Recorded at: {row['recorded_at_time']}<br>Lat: {row['lat']}<br>Lon: {row['lon']}<br>Plate: {row['siri_ride__vehicle_ref']}<br>{row['siri_route__line_ref']}<br>{row['siri_ride__scheduled_start_time']}"
                 folium.Marker(location=[row['lat'], row['lon']],icon=folium.Icon(color=color),popup=popup_text).add_to(map)
 
         map.save(path)
@@ -158,7 +158,7 @@ def get_siri_query_params_out(line_refs, operator_refs):
         _type_: _description_
     """
     date = datetime.date(2023, 2, 20)
-    start_hour, end_hour = 22, 23
+    start_hour, end_hour = 6, 9
     recorded_at_time_from = datetime.datetime.combine(
         date, datetime.time(start_hour), datetime.timezone.utc)
     recorded_at_time_to = datetime.datetime.combine(
