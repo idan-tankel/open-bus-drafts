@@ -136,16 +136,16 @@ def create_map(path, data):
     'darkpurple']
     if not data.empty:
         df = data[['lat', 'lon', 'recorded_at_time',
-                   "siri_ride__vehicle_ref"]]
+                   "siri_ride__vehicle_ref","siri_route__line_ref"]]
 
         map = folium.Map(location=[df.iloc[0]['lat'], df.iloc[0]['lon']],
-                         names=['lat', 'lon', 'recorded_at_time', "siri_ride__vehicle_ref"], max_zoom=21)
+                         names=['lat', 'lon', 'recorded_at_time', "siri_ride__vehicle_ref",'siri_route__line_ref'], max_zoom=21)
 
         for (name,group),color in zip(df.groupby("siri_ride__vehicle_ref"),colors):
             print(name)
         # Loop through the DataFrame and add a marker for each location with the recorded time
             for index, row in group.iterrows(): 
-                popup_text = f"Recorded at: {row['recorded_at_time']}<br>Lat: {row['lat']}<br>Lon: {row['lon']}<br>Plate: {row['siri_ride__vehicle_ref']}"
+                popup_text = f"Recorded at: {row['recorded_at_time']}<br>Lat: {row['lat']}<br>Lon: {row['lon']}<br>Plate: {row['siri_ride__vehicle_ref']}<br>{row['siri_route__line_ref']}"
                 folium.Marker(location=[row['lat'], row['lon']],icon=folium.Icon(color=color),popup=popup_text).add_to(map)
 
         map.save(path)
@@ -164,8 +164,8 @@ def get_siri_query_params_out(line_refs, operator_refs):
     recorded_at_time_to = datetime.datetime.combine(
         date, datetime.time(end_hour, 59, 59), datetime.timezone.utc)
     down_params = {
-        "gtfs_route__line_refs": line_refs,
-        "gtfs_route__operator_refs": operator_refs,
+        "siri_routes__line_ref": line_refs,
+        "siri_routes__operator_ref": operator_refs,
         "recorded_at_time_from": recorded_at_time_from,
         "recorded_at_time_to": recorded_at_time_to,
         "lat__lower_or_equal": lon_lat_first_stop["lat"] - EPSILON_lat,
@@ -175,8 +175,8 @@ def get_siri_query_params_out(line_refs, operator_refs):
         "order_by": "recorded_at_time"
     }
     up_params = {
-        "gtfs_route__line_refs": line_refs,
-        "gtfs_route__operator_refs": operator_refs,
+        "siri_routes__line_ref": line_refs,
+        "siri_routes__operator_ref": operator_refs,
         "recorded_at_time_from": recorded_at_time_from,
         "recorded_at_time_to": recorded_at_time_to,
         "lat__greater_or_equal": lon_lat_first_stop["lat"] + EPSILON_lat,
@@ -186,8 +186,8 @@ def get_siri_query_params_out(line_refs, operator_refs):
         "order_by": "recorded_at_time"
     }
     left_params = {
-        "gtfs_route__line_refs": line_refs,
-        "gtfs_route__operator_refs": operator_refs,
+        "siri_routes__line_ref": line_refs,
+        "siri_routes__operator_ref": operator_refs,
         "recorded_at_time_from": recorded_at_time_from,
         "recorded_at_time_to": recorded_at_time_to,
         "lon__lower_or_equal": lon_lat_first_stop["lon"] - EPSILON_lon,
@@ -197,8 +197,8 @@ def get_siri_query_params_out(line_refs, operator_refs):
         "order_by": "recorded_at_time"
     }
     right_params = {
-        "gtfs_route__line_refs": line_refs,
-        "gtfs_route__operator_refs": operator_refs,
+        "siri_routes__line_ref": line_refs,
+        "siri_routes__operator_ref": operator_refs,
         "recorded_at_time_from": recorded_at_time_from,
         "recorded_at_time_to": recorded_at_time_to,
         "lon__greater_or_equal": lon_lat_first_stop["lon"] + EPSILON_lon,
@@ -219,8 +219,10 @@ def main():
         "%H:%M:%S")) for record in records_list]
     create_map(data=pd.DataFrame(records_list), path=r"./nearby.html")
 
+
+    # update the line refs accordingly 
     out_params = get_siri_query_params_out(
-        line_refs=close_gtfs_rides_line_ref, operator_refs=close_gtfs_rides_operator_ref)
+        line_refs=close_gtfs_rides_line_ref[0], operator_refs=close_gtfs_rides_operator_ref[0])
     generator_list = []
     for type, params in out_params.items():
         generator_list.append(stride.iterate('/siri_vehicle_locations/list',
