@@ -120,6 +120,20 @@ def get_siri_query_params(line_refs, operator_refs):
 
 
 def create_map(path, data):
+    colors = ['red',
+    'blue',
+    'gray',
+    'darkred',
+    'lightred',
+    'orange',
+    'beige',
+    'green',
+    'darkgreen',
+    'lightgreen',
+    'darkblue',
+    'lightblue',
+    'purple',
+    'darkpurple']
     if not data.empty:
         df = data[['lat', 'lon', 'recorded_at_time',
                    "siri_ride__vehicle_ref"]]
@@ -127,12 +141,12 @@ def create_map(path, data):
         map = folium.Map(location=[df.iloc[0]['lat'], df.iloc[0]['lon']],
                          names=['lat', 'lon', 'recorded_at_time', "siri_ride__vehicle_ref"], max_zoom=21)
 
-        for name,group in df.groupby("siri_ride__vehicle_ref"):
+        for (name,group),color in zip(df.groupby("siri_ride__vehicle_ref"),colors):
             print(name)
         # Loop through the DataFrame and add a marker for each location with the recorded time
-            for index, row in group.iterrows():
+            for index, row in group.iterrows(): 
                 popup_text = f"Recorded at: {row['recorded_at_time']}<br>Lat: {row['lat']}<br>Lon: {row['lon']}<br>Plate: {row['siri_ride__vehicle_ref']}"
-                folium.Marker(location=[row['lat'], row['lon']],popup=popup_text).add_to(map)
+                folium.Marker(location=[row['lat'], row['lon']],icon=folium.Icon(color=color),popup=popup_text).add_to(map)
 
         map.save(path)
 
