@@ -2,9 +2,14 @@
 import stride
 from stride import api_proxy
 import datetime
-radius_factor = 1  # default to 1
+import folium
+import pandas as pd
+radius_factor = 0.1  # default to 1
+outer_factor = 12
 EPSILON_lon = 0.015060*radius_factor  # 0.015060 is 1.5 km
 EPSILON_lat = 0.008983*radius_factor  # 0.008983 is 1 km
+ETA_lon = EPSILON_lon*outer_factor
+ETA_lat = EPSILON_lat*outer_factor
 TOP_FORWARD_STATIONS = 10000
 kwargs = {
     "line_short_name": "47",
@@ -22,6 +27,11 @@ kwargs = {
 
 
 def get_gtfs_ride_stop_query_params():
+    """_summary_
+
+    Returns:
+        _type_: _description_
+    """
     line_short_name = "47"
     agency = "מטרופולין"
     originated_at = "רעננה"
@@ -76,21 +86,22 @@ close_gtfs_rides = list(stride.iterate(
 close_gtfs_rides_hours = list(
     set([ride["start_time"] for ride in close_gtfs_rides]))
 close_gtfs_rides_line_ref = list(
-    set([ride["start_time"] for ride in close_gtfs_rides]))
+    set([ride["gtfs_route__line_ref"] for ride in close_gtfs_rides]))
 close_gtfs_rides_operator_ref = list(
-    set([ride["start_time"] for ride in close_gtfs_rides]))
+    set([ride["gtfs_route__operator_ref"] for ride in close_gtfs_rides]))
 
 gtfs_ride_stops = list(stride.iterate('/gtfs_ride_stops/list',
                        params=get_gtfs_ride_stop_query_params(), limit=TOP_FORWARD_STATIONS))
 lon_lat_lists = [{"lon": stop["gtfs_stop__lon"],
                   "lat": stop["gtfs_stop__lat"]} for stop in gtfs_ride_stops]
+lon_lat_first_stop = lon_lat_lists[0]
 # locations for the start and the last
 # locate all the siri records by those locations
 
 
-def get_siri_query_params(line_refs,operator_refs):
+def get_siri_query_params(line_refs, operator_refs):
     date = datetime.date(2023, 2, 20)
-    start_hour, end_hour = 10, 23
+    start_hour, end_hour = 22, 23
     recorded_at_time_from = datetime.datetime.combine(
         date, datetime.time(start_hour), datetime.timezone.utc)
     recorded_at_time_to = datetime.datetime.combine(
@@ -98,72 +109,119 @@ def get_siri_query_params(line_refs,operator_refs):
     return {
         "recorded_at_time_from": recorded_at_time_from,
         "recorded_at_time_to": recorded_at_time_to,
-        "siri_routes__ids": 
-        "lon__greater_or_equal": lon_lat_lists[0]["lon"] - EPSILON_lon,
-        "lon__lower_or_equal": lon_lat_lists[0]["lon"] + EPSILON_lon,
-        "lat__greater_or_equal": lon_lat_lists[0]["lat"] - EPSILON_lat,
-        "lat__lower_or_equal": lon_lat_lists[0]["lat"] + EPSILON_lat,
+        "gtfs_route__line_refs": line_refs,
+        "gtfs_route__operator_refs": operator_refs,
+        "lon__greater_or_equal": lon_lat_first_stop["lon"] - EPSILON_lon,
+        "lon__lower_or_equal": lon_lat_first_stop["lon"] + EPSILON_lon,
+        "lat__greater_or_equal": lon_lat_first_stop["lat"] - EPSILON_lat,
+        "lat__lower_or_equal": lon_lat_first_stop["lat"] + EPSILON_lat,
         "order_by": "recorded_at_time"
     }
 
 
-def get_siri_query_params_out():
+def create_map(path, data):
+    if not data.empty:
+        df = data[['lat', 'lon', 'recorded_at_time',
+                   "siri_ride__vehicle_ref"]]
+
+        map = folium.Map(location=[df.iloc[0]['lat'], df.iloc[0]['lon']],
+                         names=['lat', 'lon', 'recorded_at_time', "siri_ride__vehicle_ref"], max_zoom=21)
+
+        for name,group in df.groupby("siri_ride__vehicle_ref"):
+            print(name)
+        # Loop through the DataFrame and add a marker for each location with the recorded time
+            for index, row in group.iterrows():
+                popup_text = f"Recorded at: {row['recorded_at_time']}<br>Lat: {row['lat']}<br>Lon: {row['lon']}<br>Plate: {row['siri_ride__vehicle_ref']}"
+                folium.Marker(location=[row['lat'], row['lon']],popup=popup_text).add_to(map)
+
+        map.save(path)
+
+
+def get_siri_query_params_out(line_refs, operator_refs):
+    """This stores the parameter of the outer racktangle - southern / northern / eastern / western of the starting point
+
+    Returns:
+        _type_: _description_
+    """
     date = datetime.date(2023, 2, 20)
-    start_hour, end_hour = 10, 23
+    start_hour, end_hour = 22, 23
     recorded_at_time_from = datetime.datetime.combine(
         date, datetime.time(start_hour), datetime.timezone.utc)
     recorded_at_time_to = datetime.datetime.combine(
         date, datetime.time(end_hour, 59, 59), datetime.timezone.utc)
     down_params = {
+        "gtfs_route__line_refs": line_refs,
+        "gtfs_route__operator_refs": operator_refs,
         "recorded_at_time_from": recorded_at_time_from,
         "recorded_at_time_to": recorded_at_time_to,
-        "lat__lower_or_equal": lon_lat_lists[0]["lat"] - EPSILON_lat,
+        "lat__lower_or_equal": lon_lat_first_stop["lat"] - EPSILON_lat,
+        "lat__greater_or_equal": lon_lat_first_stop["lat"] - ETA_lat,
+        "lon__greater_or_equal": lon_lat_first_stop["lon"] - ETA_lon,
+        "lon__lower_or_equal": lon_lat_first_stop["lon"] + ETA_lon,
         "order_by": "recorded_at_time"
     }
     up_params = {
+        "gtfs_route__line_refs": line_refs,
+        "gtfs_route__operator_refs": operator_refs,
         "recorded_at_time_from": recorded_at_time_from,
         "recorded_at_time_to": recorded_at_time_to,
-        "lat__greater_or_equal": lon_lat_lists[0]["lat"] + EPSILON_lat,
+        "lat__greater_or_equal": lon_lat_first_stop["lat"] + EPSILON_lat,
+        "lat__lower_or_equal": lon_lat_first_stop["lat"] + ETA_lat,
+        "lon__greater_or_equal": lon_lat_first_stop["lon"] - ETA_lon,
+        "lon__lower_or_equal": lon_lat_first_stop["lon"] + ETA_lon,
         "order_by": "recorded_at_time"
     }
     left_params = {
+        "gtfs_route__line_refs": line_refs,
+        "gtfs_route__operator_refs": operator_refs,
         "recorded_at_time_from": recorded_at_time_from,
         "recorded_at_time_to": recorded_at_time_to,
-        "lon__greater_or_equal": lon_lat_lists[0]["lon"] + EPSILON_lon,
-        "lon__lower_or_equal": lon_lat_lists[0]["lon"] + EPSILON_lon,
+        "lon__lower_or_equal": lon_lat_first_stop["lon"] - EPSILON_lon,
+        "lon__greater_or_equal": lon_lat_first_stop["lon"] - ETA_lon,
+        "lat__greater_or_equal": lon_lat_first_stop["lat"] - ETA_lat,
+        "lat__lower_or_equal": lon_lat_first_stop["lat"] + ETA_lat,
         "order_by": "recorded_at_time"
     }
     right_params = {
+        "gtfs_route__line_refs": line_refs,
+        "gtfs_route__operator_refs": operator_refs,
         "recorded_at_time_from": recorded_at_time_from,
         "recorded_at_time_to": recorded_at_time_to,
-        "lon__greater_or_equal": lon_lat_lists[0]["lon"] - EPSILON_lon,
-        "lon__lower_or_equal": lon_lat_lists[0]["lon"] + EPSILON_lon,
-        "lat__greater_or_equal": lon_lat_lists[0]["lat"] - EPSILON_lat,
-        "lat__lower_or_equal": lon_lat_lists[0]["lat"] + EPSILON_lat,
+        "lon__greater_or_equal": lon_lat_first_stop["lon"] + EPSILON_lon,
+        "lon__lower_or_equal": lon_lat_first_stop["lon"] + ETA_lon,
+        "lat__greater_or_equal": lon_lat_first_stop["lat"] - ETA_lat,
+        "lat__lower_or_equal": lon_lat_first_stop["lat"] + ETA_lat,
         "order_by": "recorded_at_time"
     }
-    return right_params, left_params, up_params, down_params
+    return {"right": right_params, "left": left_params, "up": up_params, "down": down_params}
 
 
 def main():
     siri_records = stride.iterate('/siri_vehicle_locations/list',
-                                  params=get_siri_query_params(line_refs=close_gtfs_rides_line_ref,operator_refs=close_gtfs_rides_operator_ref), limit=TOP_FORWARD_STATIONS)
+                                  params=get_siri_query_params(line_refs=close_gtfs_rides_line_ref, operator_refs=close_gtfs_rides_operator_ref), limit=TOP_FORWARD_STATIONS)
     # print(list(siri_records))
     records_list = list(siri_records)
     locations_list = [(record["lat"], record["lon"], record["recorded_at_time"].strftime(
         "%H:%M:%S")) for record in records_list]
-    print(locations_list)
+    create_map(data=pd.DataFrame(records_list), path=r"./nearby.html")
 
-    args = get_siri_query_params_out()
+    out_params = get_siri_query_params_out(
+        line_refs=close_gtfs_rides_line_ref, operator_refs=close_gtfs_rides_operator_ref)
     generator_list = []
-    for params in args:
+    for type, params in out_params.items():
         generator_list.append(stride.iterate('/siri_vehicle_locations/list',
-                                               params=params, limit=TOP_FORWARD_STATIONS))
-    
+                                             params=params, limit=TOP_FORWARD_STATIONS))
 
     # convert generators to something real
-    results = [list(result) for result in results]
-  # print(list(close_gtfs_rides))
+    results = [pd.DataFrame(result) for result in generator_list]
+    right_results, left_results, up_results, down_results = results
+    create_map(data=right_results, path="right.html")
+    create_map(data=left_results, path="left.html")
+    create_map(data=up_results, path="up.html")
+    create_map(data=down_results, path="down.html")
+    print(results)
+
+    # plot the locations on openstreetmap
 
 
 if __name__ == '__main__':
