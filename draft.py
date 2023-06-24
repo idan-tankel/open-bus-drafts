@@ -100,7 +100,7 @@ lon_lat_first_stop = lon_lat_lists[0]
 
 
 def get_siri_query_params(line_refs, operator_refs):
-    date = datetime.date(2023, 2, 20)
+    date = datetime.date(2023, 2, 21)
     start_hour, end_hour = 6, 9
     recorded_at_time_from = datetime.datetime.combine(
         date, datetime.time(start_hour), datetime.timezone.utc)
@@ -157,7 +157,7 @@ def get_siri_query_params_out(line_refs, operator_refs):
     Returns:
         _type_: _description_
     """
-    date = datetime.date(2023, 2, 20)
+    date = datetime.date(2023, 2, 21)
     start_hour, end_hour = 6, 9
     recorded_at_time_from = datetime.datetime.combine(
         date, datetime.time(start_hour), datetime.timezone.utc)
@@ -212,7 +212,7 @@ def get_siri_query_params_out(line_refs, operator_refs):
 
 def main():
     siri_records = stride.iterate('/siri_vehicle_locations/list',
-                                  params=get_siri_query_params(line_refs=close_gtfs_rides_line_ref, operator_refs=close_gtfs_rides_operator_ref), limit=TOP_FORWARD_STATIONS)
+                                  params=get_siri_query_params(line_refs=close_gtfs_rides_line_ref[0], operator_refs=close_gtfs_rides_operator_ref[0]), limit=TOP_FORWARD_STATIONS)
     # print(list(siri_records))
     records_list = list(siri_records)
     locations_list = [(record["lat"], record["lon"], record["recorded_at_time"].strftime(
@@ -235,6 +235,8 @@ def main():
     create_map(data=left_results, path="left.html")
     create_map(data=up_results, path="up.html")
     create_map(data=down_results, path="down.html")
+    results.append(pd.DataFrame(records_list))
+    create_map(data=pd.concat(results), path="concat.html")
     print(results)
 
     # plot the locations on openstreetmap
