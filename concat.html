@@ -1,0 +1,2986 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_33c611574f451bdc666e1420cce555f7 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_33c611574f451bdc666e1420cce555f7" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_33c611574f451bdc666e1420cce555f7 = L.map(
+                "map_33c611574f451bdc666e1420cce555f7",
+                {
+                    center: [32.174755, 34.910526],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10,
+                    zoomControl: true,
+                    preferCanvas: false,
+                    names: ["lat", "lon", "recorded_at_time", "siri_ride__vehicle_ref", "siri_route__line_ref", "siri_ride__scheduled_start_time"],
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_783cbfbb02ce2ba4f2c55734b94cf9a8 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 21, "maxZoom": 21, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var marker_a440e8242358e0bdf5735cf024c7e744 = L.marker(
+                [32.178962, 34.927864],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_acba16424f6eb3825808426e927b3271 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_a440e8242358e0bdf5735cf024c7e744.setIcon(icon_acba16424f6eb3825808426e927b3271);
+        
+    
+        var popup_9ced6793f2301e05063f0d6415d2d423 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c322293163ea29c7e9560dd1f81ec52e = $(`<div id="html_c322293163ea29c7e9560dd1f81ec52e" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:25:00+00:00<br>Lat: 32.178962<br>Lon: 34.927864<br>Plate: 1517358<br>7716<br>2023-02-21 06:30:00+00:00</div>`)[0];
+                popup_9ced6793f2301e05063f0d6415d2d423.setContent(html_c322293163ea29c7e9560dd1f81ec52e);
+            
+        
+
+        marker_a440e8242358e0bdf5735cf024c7e744.bindPopup(popup_9ced6793f2301e05063f0d6415d2d423)
+        ;
+
+        
+    
+    
+            var marker_c87550aa6cf91bba33818f954d66d8fc = L.marker(
+                [32.178962, 34.927864],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_5873cc29eaa8a8f24d4e6fe41c439e9f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_c87550aa6cf91bba33818f954d66d8fc.setIcon(icon_5873cc29eaa8a8f24d4e6fe41c439e9f);
+        
+    
+        var popup_bb6347fb26f743c4d2a7d4a4a119815e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_588bcdc82447e091da4af0dbd1a2a8db = $(`<div id="html_588bcdc82447e091da4af0dbd1a2a8db" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:25:00+00:00<br>Lat: 32.178962<br>Lon: 34.927864<br>Plate: 1517358<br>7716<br>2023-02-21 06:30:00+00:00</div>`)[0];
+                popup_bb6347fb26f743c4d2a7d4a4a119815e.setContent(html_588bcdc82447e091da4af0dbd1a2a8db);
+            
+        
+
+        marker_c87550aa6cf91bba33818f954d66d8fc.bindPopup(popup_bb6347fb26f743c4d2a7d4a4a119815e)
+        ;
+
+        
+    
+    
+            var marker_68ed7bd92ff8705f23002dd0f36dcf26 = L.marker(
+                [32.178962, 34.927864],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_c0796c61c23eb6999e80da3d2f27289d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_68ed7bd92ff8705f23002dd0f36dcf26.setIcon(icon_c0796c61c23eb6999e80da3d2f27289d);
+        
+    
+        var popup_54120dc4efe9de9321993d0b5534569f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d613b5d36b7f36bbae8fc3231eb482e7 = $(`<div id="html_d613b5d36b7f36bbae8fc3231eb482e7" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:25:00+00:00<br>Lat: 32.178962<br>Lon: 34.927864<br>Plate: 1517358<br>7716<br>2023-02-21 06:30:00+00:00</div>`)[0];
+                popup_54120dc4efe9de9321993d0b5534569f.setContent(html_d613b5d36b7f36bbae8fc3231eb482e7);
+            
+        
+
+        marker_68ed7bd92ff8705f23002dd0f36dcf26.bindPopup(popup_54120dc4efe9de9321993d0b5534569f)
+        ;
+
+        
+    
+    
+            var marker_3962a0adc925ac306d665afeaa6aafa3 = L.marker(
+                [32.178962, 34.927864],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_1bbe03b7eaa7930aacf33ef20d6b8d7b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_3962a0adc925ac306d665afeaa6aafa3.setIcon(icon_1bbe03b7eaa7930aacf33ef20d6b8d7b);
+        
+    
+        var popup_847d2ebb91a2a2f066cc418529a0abfe = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8e48626779fbd2cc9643b88034495ccd = $(`<div id="html_8e48626779fbd2cc9643b88034495ccd" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:25:00+00:00<br>Lat: 32.178962<br>Lon: 34.927864<br>Plate: 1517358<br>7716<br>2023-02-21 06:30:00+00:00</div>`)[0];
+                popup_847d2ebb91a2a2f066cc418529a0abfe.setContent(html_8e48626779fbd2cc9643b88034495ccd);
+            
+        
+
+        marker_3962a0adc925ac306d665afeaa6aafa3.bindPopup(popup_847d2ebb91a2a2f066cc418529a0abfe)
+        ;
+
+        
+    
+    
+            var marker_a9575ba70fea6d630f4262ba7191866f = L.marker(
+                [32.178962, 34.927864],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_f1c95208773eac23f26940dd4f6095e4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_a9575ba70fea6d630f4262ba7191866f.setIcon(icon_f1c95208773eac23f26940dd4f6095e4);
+        
+    
+        var popup_c472e6d38df3ccad8300f5c5284c13a5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6737f3c91962bd66c672fa116fc5dfdc = $(`<div id="html_6737f3c91962bd66c672fa116fc5dfdc" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:25:00+00:00<br>Lat: 32.178962<br>Lon: 34.927864<br>Plate: 1517358<br>7716<br>2023-02-21 06:30:00+00:00</div>`)[0];
+                popup_c472e6d38df3ccad8300f5c5284c13a5.setContent(html_6737f3c91962bd66c672fa116fc5dfdc);
+            
+        
+
+        marker_a9575ba70fea6d630f4262ba7191866f.bindPopup(popup_c472e6d38df3ccad8300f5c5284c13a5)
+        ;
+
+        
+    
+    
+            var marker_f8daf58e14cbc959a81893002b0b73cb = L.marker(
+                [32.178962, 34.927867],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_08eab270b3262ee14ea95aaaaa8c51c4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_f8daf58e14cbc959a81893002b0b73cb.setIcon(icon_08eab270b3262ee14ea95aaaaa8c51c4);
+        
+    
+        var popup_56d9dd2288fd3c47a835c55ebd87664d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_73d5a789c275c8a37a5d2d12f40e0353 = $(`<div id="html_73d5a789c275c8a37a5d2d12f40e0353" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:30:00+00:00<br>Lat: 32.178962<br>Lon: 34.927867<br>Plate: 1517358<br>7716<br>2023-02-21 06:30:00+00:00</div>`)[0];
+                popup_56d9dd2288fd3c47a835c55ebd87664d.setContent(html_73d5a789c275c8a37a5d2d12f40e0353);
+            
+        
+
+        marker_f8daf58e14cbc959a81893002b0b73cb.bindPopup(popup_56d9dd2288fd3c47a835c55ebd87664d)
+        ;
+
+        
+    
+    
+            var marker_d3a93ca5e05f0e34a0927abc5d341796 = L.marker(
+                [32.178962, 34.927867],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_4af04be7f62509bd78e42dd12e868da6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_d3a93ca5e05f0e34a0927abc5d341796.setIcon(icon_4af04be7f62509bd78e42dd12e868da6);
+        
+    
+        var popup_2d6889f836553e698eda5c12fa6d638a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ee471c1434f85808e5a758ece8162d07 = $(`<div id="html_ee471c1434f85808e5a758ece8162d07" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:30:00+00:00<br>Lat: 32.178962<br>Lon: 34.927867<br>Plate: 1517358<br>7716<br>2023-02-21 06:30:00+00:00</div>`)[0];
+                popup_2d6889f836553e698eda5c12fa6d638a.setContent(html_ee471c1434f85808e5a758ece8162d07);
+            
+        
+
+        marker_d3a93ca5e05f0e34a0927abc5d341796.bindPopup(popup_2d6889f836553e698eda5c12fa6d638a)
+        ;
+
+        
+    
+    
+            var marker_3cc3fcaf01c825558b1314ad9284d4ad = L.marker(
+                [32.178962, 34.927867],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_8c4d5e2bf362acbe98d6fee0cabd1669 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_3cc3fcaf01c825558b1314ad9284d4ad.setIcon(icon_8c4d5e2bf362acbe98d6fee0cabd1669);
+        
+    
+        var popup_b7b1a7751759e40a0e3ff6687cd46424 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_dc5d64f289494db0c49b41e1065626fc = $(`<div id="html_dc5d64f289494db0c49b41e1065626fc" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:30:00+00:00<br>Lat: 32.178962<br>Lon: 34.927867<br>Plate: 1517358<br>7716<br>2023-02-21 06:30:00+00:00</div>`)[0];
+                popup_b7b1a7751759e40a0e3ff6687cd46424.setContent(html_dc5d64f289494db0c49b41e1065626fc);
+            
+        
+
+        marker_3cc3fcaf01c825558b1314ad9284d4ad.bindPopup(popup_b7b1a7751759e40a0e3ff6687cd46424)
+        ;
+
+        
+    
+    
+            var marker_d94039314f737783274ebb69e4fcf4aa = L.marker(
+                [32.178962, 34.927867],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_ad4720519469cbf649e175b7f49df5ee = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_d94039314f737783274ebb69e4fcf4aa.setIcon(icon_ad4720519469cbf649e175b7f49df5ee);
+        
+    
+        var popup_ee5d1a0f05aee37356a07dc3c1521eef = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5a1d59a17dfc0468ed2a345b508f28b2 = $(`<div id="html_5a1d59a17dfc0468ed2a345b508f28b2" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:30:00+00:00<br>Lat: 32.178962<br>Lon: 34.927867<br>Plate: 1517358<br>7716<br>2023-02-21 06:30:00+00:00</div>`)[0];
+                popup_ee5d1a0f05aee37356a07dc3c1521eef.setContent(html_5a1d59a17dfc0468ed2a345b508f28b2);
+            
+        
+
+        marker_d94039314f737783274ebb69e4fcf4aa.bindPopup(popup_ee5d1a0f05aee37356a07dc3c1521eef)
+        ;
+
+        
+    
+    
+            var marker_b871b77cb2157f718b0dc3367343e90a = L.marker(
+                [32.175094, 34.909294],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_1da8000fbc6dba24d1726e8fd8f89358 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_b871b77cb2157f718b0dc3367343e90a.setIcon(icon_1da8000fbc6dba24d1726e8fd8f89358);
+        
+    
+        var popup_d66dffeddcbfe5d9deb162df15dc7916 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0930e889b566701e32d6773d7d6f4f78 = $(`<div id="html_0930e889b566701e32d6773d7d6f4f78" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 07:05:06+00:00<br>Lat: 32.175094<br>Lon: 34.909294<br>Plate: 3174139<br>7720<br>2023-02-21 06:05:00+00:00</div>`)[0];
+                popup_d66dffeddcbfe5d9deb162df15dc7916.setContent(html_0930e889b566701e32d6773d7d6f4f78);
+            
+        
+
+        marker_b871b77cb2157f718b0dc3367343e90a.bindPopup(popup_d66dffeddcbfe5d9deb162df15dc7916)
+        ;
+
+        
+    
+    
+            var marker_7f6818fb5aa32d7a8c2045cff46cc271 = L.marker(
+                [32.174869, 34.910339],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_083f05a31c28e9aa8d42ccf531cfaf2b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_7f6818fb5aa32d7a8c2045cff46cc271.setIcon(icon_083f05a31c28e9aa8d42ccf531cfaf2b);
+        
+    
+        var popup_b856aa778c5131d54260455b4509f8e6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c1613be9eae54eb4d4e465c95efe808a = $(`<div id="html_c1613be9eae54eb4d4e465c95efe808a" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 07:05:43+00:00<br>Lat: 32.174869<br>Lon: 34.910339<br>Plate: 3174139<br>7720<br>2023-02-21 06:05:00+00:00</div>`)[0];
+                popup_b856aa778c5131d54260455b4509f8e6.setContent(html_c1613be9eae54eb4d4e465c95efe808a);
+            
+        
+
+        marker_7f6818fb5aa32d7a8c2045cff46cc271.bindPopup(popup_b856aa778c5131d54260455b4509f8e6)
+        ;
+
+        
+    
+    
+            var marker_c7aaec7ebfc2d366f48f516da6061a57 = L.marker(
+                [32.174171, 34.913513],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_70d704d7c0358ccb704908c05a963ea2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_c7aaec7ebfc2d366f48f516da6061a57.setIcon(icon_70d704d7c0358ccb704908c05a963ea2);
+        
+    
+        var popup_963b922b0453226fe28153262a86c0c9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_61c14f99f7a37f88dcf8d7f097604456 = $(`<div id="html_61c14f99f7a37f88dcf8d7f097604456" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 07:06:31+00:00<br>Lat: 32.174171<br>Lon: 34.913513<br>Plate: 3174139<br>7720<br>2023-02-21 06:05:00+00:00</div>`)[0];
+                popup_963b922b0453226fe28153262a86c0c9.setContent(html_61c14f99f7a37f88dcf8d7f097604456);
+            
+        
+
+        marker_c7aaec7ebfc2d366f48f516da6061a57.bindPopup(popup_963b922b0453226fe28153262a86c0c9)
+        ;
+
+        
+    
+    
+            var marker_5a6fbb12c467371adfb21c1f66b8e315 = L.marker(
+                [32.173336, 34.916622],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_9847db93d3388d1fb2a309809c19c78e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_5a6fbb12c467371adfb21c1f66b8e315.setIcon(icon_9847db93d3388d1fb2a309809c19c78e);
+        
+    
+        var popup_23a3817deed722de551d1a01671139da = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1dec95deada998e8799bd2bff9970363 = $(`<div id="html_1dec95deada998e8799bd2bff9970363" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 07:08:06+00:00<br>Lat: 32.173336<br>Lon: 34.916622<br>Plate: 3174139<br>7720<br>2023-02-21 06:05:00+00:00</div>`)[0];
+                popup_23a3817deed722de551d1a01671139da.setContent(html_1dec95deada998e8799bd2bff9970363);
+            
+        
+
+        marker_5a6fbb12c467371adfb21c1f66b8e315.bindPopup(popup_23a3817deed722de551d1a01671139da)
+        ;
+
+        
+    
+    
+            var marker_a97b1178738f9003c0fa9b90bc0844e5 = L.marker(
+                [32.172653, 34.919834],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_57aab62b8249c0b8561d255256a3e123 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_a97b1178738f9003c0fa9b90bc0844e5.setIcon(icon_57aab62b8249c0b8561d255256a3e123);
+        
+    
+        var popup_9cfe54badf0cdf05e8ea34a871976e84 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_dafc3a9b417e0cb3adf8bdded0543a4f = $(`<div id="html_dafc3a9b417e0cb3adf8bdded0543a4f" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 07:08:44+00:00<br>Lat: 32.172653<br>Lon: 34.919834<br>Plate: 3174139<br>7720<br>2023-02-21 06:05:00+00:00</div>`)[0];
+                popup_9cfe54badf0cdf05e8ea34a871976e84.setContent(html_dafc3a9b417e0cb3adf8bdded0543a4f);
+            
+        
+
+        marker_a97b1178738f9003c0fa9b90bc0844e5.bindPopup(popup_9cfe54badf0cdf05e8ea34a871976e84)
+        ;
+
+        
+    
+    
+            var marker_2a9c0faa01b3972fec35f729502b3010 = L.marker(
+                [32.171867, 34.922969],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_edd8a91527fc084f19d38522ad62470e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_2a9c0faa01b3972fec35f729502b3010.setIcon(icon_edd8a91527fc084f19d38522ad62470e);
+        
+    
+        var popup_c6d25c9edb016b2160a2b1d127047441 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7eadddf48a3eb03ee1d097e042691d55 = $(`<div id="html_7eadddf48a3eb03ee1d097e042691d55" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 07:10:14+00:00<br>Lat: 32.171867<br>Lon: 34.922969<br>Plate: 3174139<br>7720<br>2023-02-21 06:05:00+00:00</div>`)[0];
+                popup_c6d25c9edb016b2160a2b1d127047441.setContent(html_7eadddf48a3eb03ee1d097e042691d55);
+            
+        
+
+        marker_2a9c0faa01b3972fec35f729502b3010.bindPopup(popup_c6d25c9edb016b2160a2b1d127047441)
+        ;
+
+        
+    
+    
+            var marker_233892d9ca1637aa32dd5a0b62edc593 = L.marker(
+                [32.172054, 34.924682],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_43b3ff4e8cfa4c7b18a453a457427c3a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_233892d9ca1637aa32dd5a0b62edc593.setIcon(icon_43b3ff4e8cfa4c7b18a453a457427c3a);
+        
+    
+        var popup_e3993b2c2bcdcacb8ebeb6764aac9ef0 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_57e7f4710ef556acc7fd2796a61deadf = $(`<div id="html_57e7f4710ef556acc7fd2796a61deadf" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 07:11:16+00:00<br>Lat: 32.172054<br>Lon: 34.924682<br>Plate: 3174139<br>7720<br>2023-02-21 06:05:00+00:00</div>`)[0];
+                popup_e3993b2c2bcdcacb8ebeb6764aac9ef0.setContent(html_57e7f4710ef556acc7fd2796a61deadf);
+            
+        
+
+        marker_233892d9ca1637aa32dd5a0b62edc593.bindPopup(popup_e3993b2c2bcdcacb8ebeb6764aac9ef0)
+        ;
+
+        
+    
+    
+            var marker_402037bb972dc4768001a89d43fc0a54 = L.marker(
+                [32.175094, 34.909294],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_3f2a7b69492a4b4c9063b4556f6ddbb9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_402037bb972dc4768001a89d43fc0a54.setIcon(icon_3f2a7b69492a4b4c9063b4556f6ddbb9);
+        
+    
+        var popup_f3d5742be99f3ba83c984c67193c47d4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f2d8366dcf8eed627240f2b7b563c554 = $(`<div id="html_f2d8366dcf8eed627240f2b7b563c554" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 07:05:06+00:00<br>Lat: 32.175094<br>Lon: 34.909294<br>Plate: 3174139<br>7720<br>2023-02-21 06:05:00+00:00</div>`)[0];
+                popup_f3d5742be99f3ba83c984c67193c47d4.setContent(html_f2d8366dcf8eed627240f2b7b563c554);
+            
+        
+
+        marker_402037bb972dc4768001a89d43fc0a54.bindPopup(popup_f3d5742be99f3ba83c984c67193c47d4)
+        ;
+
+        
+    
+    
+            var marker_600a6afcf6961b9457b6391fe5220399 = L.marker(
+                [32.174869, 34.910339],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_16cf8c453f872ab2fdfb0678d18734ad = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_600a6afcf6961b9457b6391fe5220399.setIcon(icon_16cf8c453f872ab2fdfb0678d18734ad);
+        
+    
+        var popup_a602aeedd45edbbb42891fdde1f7b896 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3ffbd703f7280bf1197cb2d1604ab5ff = $(`<div id="html_3ffbd703f7280bf1197cb2d1604ab5ff" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 07:05:43+00:00<br>Lat: 32.174869<br>Lon: 34.910339<br>Plate: 3174139<br>7720<br>2023-02-21 06:05:00+00:00</div>`)[0];
+                popup_a602aeedd45edbbb42891fdde1f7b896.setContent(html_3ffbd703f7280bf1197cb2d1604ab5ff);
+            
+        
+
+        marker_600a6afcf6961b9457b6391fe5220399.bindPopup(popup_a602aeedd45edbbb42891fdde1f7b896)
+        ;
+
+        
+    
+    
+            var marker_7e875f1eabff469e7d320138a696f179 = L.marker(
+                [32.174171, 34.913513],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_6172fbd81cca51b945c33d2a4754a222 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_7e875f1eabff469e7d320138a696f179.setIcon(icon_6172fbd81cca51b945c33d2a4754a222);
+        
+    
+        var popup_86a8583f936662db4873cfdc6036a453 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_414f8732317ebcf7c70d76c814311283 = $(`<div id="html_414f8732317ebcf7c70d76c814311283" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 07:06:31+00:00<br>Lat: 32.174171<br>Lon: 34.913513<br>Plate: 3174139<br>7720<br>2023-02-21 06:05:00+00:00</div>`)[0];
+                popup_86a8583f936662db4873cfdc6036a453.setContent(html_414f8732317ebcf7c70d76c814311283);
+            
+        
+
+        marker_7e875f1eabff469e7d320138a696f179.bindPopup(popup_86a8583f936662db4873cfdc6036a453)
+        ;
+
+        
+    
+    
+            var marker_a9178d4900980b22970a808b52780833 = L.marker(
+                [32.173336, 34.916622],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_faef8c011bc8a7a2cbcf90a4d8d583e5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_a9178d4900980b22970a808b52780833.setIcon(icon_faef8c011bc8a7a2cbcf90a4d8d583e5);
+        
+    
+        var popup_b90412bf4347d18676581a870589659d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8c588cf8c292d6c3bd96da103488e581 = $(`<div id="html_8c588cf8c292d6c3bd96da103488e581" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 07:08:06+00:00<br>Lat: 32.173336<br>Lon: 34.916622<br>Plate: 3174139<br>7720<br>2023-02-21 06:05:00+00:00</div>`)[0];
+                popup_b90412bf4347d18676581a870589659d.setContent(html_8c588cf8c292d6c3bd96da103488e581);
+            
+        
+
+        marker_a9178d4900980b22970a808b52780833.bindPopup(popup_b90412bf4347d18676581a870589659d)
+        ;
+
+        
+    
+    
+            var marker_577999389d9b6e6792221570d0da8987 = L.marker(
+                [32.172653, 34.919834],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_0156ccbbfb7c186be45261e4ca0a0367 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_577999389d9b6e6792221570d0da8987.setIcon(icon_0156ccbbfb7c186be45261e4ca0a0367);
+        
+    
+        var popup_8f382934b89cbe2bcae137981f925a4d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_eae651957be8b2bdde2c76f7aad09856 = $(`<div id="html_eae651957be8b2bdde2c76f7aad09856" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 07:08:44+00:00<br>Lat: 32.172653<br>Lon: 34.919834<br>Plate: 3174139<br>7720<br>2023-02-21 06:05:00+00:00</div>`)[0];
+                popup_8f382934b89cbe2bcae137981f925a4d.setContent(html_eae651957be8b2bdde2c76f7aad09856);
+            
+        
+
+        marker_577999389d9b6e6792221570d0da8987.bindPopup(popup_8f382934b89cbe2bcae137981f925a4d)
+        ;
+
+        
+    
+    
+            var marker_1c5861d13c10ffc93ca49917dcc111a6 = L.marker(
+                [32.171867, 34.922969],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_17ba74a1d6dd12ec7d42b32f3508de29 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_1c5861d13c10ffc93ca49917dcc111a6.setIcon(icon_17ba74a1d6dd12ec7d42b32f3508de29);
+        
+    
+        var popup_2c3b5eba355f4a958057924f55f47354 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_201e8ada197e7ce4e8dc3e7be96d9182 = $(`<div id="html_201e8ada197e7ce4e8dc3e7be96d9182" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 07:10:14+00:00<br>Lat: 32.171867<br>Lon: 34.922969<br>Plate: 3174139<br>7720<br>2023-02-21 06:05:00+00:00</div>`)[0];
+                popup_2c3b5eba355f4a958057924f55f47354.setContent(html_201e8ada197e7ce4e8dc3e7be96d9182);
+            
+        
+
+        marker_1c5861d13c10ffc93ca49917dcc111a6.bindPopup(popup_2c3b5eba355f4a958057924f55f47354)
+        ;
+
+        
+    
+    
+            var marker_6ac8a6de2a60fc21f2e36a7a472996a7 = L.marker(
+                [32.172054, 34.924682],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_744c53b99fee8ff9fde71efae331d15e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_6ac8a6de2a60fc21f2e36a7a472996a7.setIcon(icon_744c53b99fee8ff9fde71efae331d15e);
+        
+    
+        var popup_b791e58fcad69e747e10836dbc882fb9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9f87ad32678ddbb03c74f80bfe5ce427 = $(`<div id="html_9f87ad32678ddbb03c74f80bfe5ce427" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 07:11:16+00:00<br>Lat: 32.172054<br>Lon: 34.924682<br>Plate: 3174139<br>7720<br>2023-02-21 06:05:00+00:00</div>`)[0];
+                popup_b791e58fcad69e747e10836dbc882fb9.setContent(html_9f87ad32678ddbb03c74f80bfe5ce427);
+            
+        
+
+        marker_6ac8a6de2a60fc21f2e36a7a472996a7.bindPopup(popup_b791e58fcad69e747e10836dbc882fb9)
+        ;
+
+        
+    
+    
+            var marker_cfdcd6a9df617ba4e5396e1cc87320a3 = L.marker(
+                [32.176391, 34.927021],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_e506e54daeb4a92de6222c568a6ec5f3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_cfdcd6a9df617ba4e5396e1cc87320a3.setIcon(icon_e506e54daeb4a92de6222c568a6ec5f3);
+        
+    
+        var popup_e8d4a1bd8ba85634441eca8c90016d15 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d5d1116eda6cdfc64cc3772dafc12bd3 = $(`<div id="html_d5d1116eda6cdfc64cc3772dafc12bd3" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 07:12:25+00:00<br>Lat: 32.176391<br>Lon: 34.927021<br>Plate: 3174139<br>7720<br>2023-02-21 06:05:00+00:00</div>`)[0];
+                popup_e8d4a1bd8ba85634441eca8c90016d15.setContent(html_d5d1116eda6cdfc64cc3772dafc12bd3);
+            
+        
+
+        marker_cfdcd6a9df617ba4e5396e1cc87320a3.bindPopup(popup_e8d4a1bd8ba85634441eca8c90016d15)
+        ;
+
+        
+    
+    
+            var marker_b477d687f0e1144ec0c61e3c164ef601 = L.marker(
+                [32.178623, 34.927406],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_59491c644c8212a235c0888a1b3bca7f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "gray", "prefix": "glyphicon"}
+            );
+            marker_b477d687f0e1144ec0c61e3c164ef601.setIcon(icon_59491c644c8212a235c0888a1b3bca7f);
+        
+    
+        var popup_58d6e0628946cd9baca3d10410f55b0e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b8a3ac74445161fe38a21cb9f2b51dd0 = $(`<div id="html_b8a3ac74445161fe38a21cb9f2b51dd0" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:00:00+00:00<br>Lat: 32.178623<br>Lon: 34.927406<br>Plate: 47080001<br>28143<br>2023-02-21 06:00:00+00:00</div>`)[0];
+                popup_58d6e0628946cd9baca3d10410f55b0e.setContent(html_b8a3ac74445161fe38a21cb9f2b51dd0);
+            
+        
+
+        marker_b477d687f0e1144ec0c61e3c164ef601.bindPopup(popup_58d6e0628946cd9baca3d10410f55b0e)
+        ;
+
+        
+    
+    
+            var marker_da57981ff73912401a9ae4bcb0c2b546 = L.marker(
+                [32.178623, 34.927406],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_10b3b1d29c208129eea9b46bd7620c61 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "gray", "prefix": "glyphicon"}
+            );
+            marker_da57981ff73912401a9ae4bcb0c2b546.setIcon(icon_10b3b1d29c208129eea9b46bd7620c61);
+        
+    
+        var popup_04f5ca737fae411958cba08595320548 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_17d958dfff96e1b79770059082f8f5a6 = $(`<div id="html_17d958dfff96e1b79770059082f8f5a6" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:00:00+00:00<br>Lat: 32.178623<br>Lon: 34.927406<br>Plate: 47080001<br>28143<br>2023-02-21 06:00:00+00:00</div>`)[0];
+                popup_04f5ca737fae411958cba08595320548.setContent(html_17d958dfff96e1b79770059082f8f5a6);
+            
+        
+
+        marker_da57981ff73912401a9ae4bcb0c2b546.bindPopup(popup_04f5ca737fae411958cba08595320548)
+        ;
+
+        
+    
+    
+            var marker_de4ad771e53d317dfe7be8f37086f7c3 = L.marker(
+                [32.177791, 34.927631],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_da099783c43f87d9b09fe461218370a6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkred", "prefix": "glyphicon"}
+            );
+            marker_de4ad771e53d317dfe7be8f37086f7c3.setIcon(icon_da099783c43f87d9b09fe461218370a6);
+        
+    
+        var popup_529fd466e05196301bd03c9cd6939766 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_11e2b9366912d71d658a9b6cbca1756b = $(`<div id="html_11e2b9366912d71d658a9b6cbca1756b" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:18:46+00:00<br>Lat: 32.177791<br>Lon: 34.927631<br>Plate: 57471601<br>11850<br>2023-02-21 05:55:00+00:00</div>`)[0];
+                popup_529fd466e05196301bd03c9cd6939766.setContent(html_11e2b9366912d71d658a9b6cbca1756b);
+            
+        
+
+        marker_de4ad771e53d317dfe7be8f37086f7c3.bindPopup(popup_529fd466e05196301bd03c9cd6939766)
+        ;
+
+        
+    
+    
+            var marker_34a62932fc63e2e7be9e5d84055385b1 = L.marker(
+                [32.175121, 34.90895],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_e50b14b61ebe49e951fc598894516a3d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "lightred", "prefix": "glyphicon"}
+            );
+            marker_34a62932fc63e2e7be9e5d84055385b1.setIcon(icon_e50b14b61ebe49e951fc598894516a3d);
+        
+    
+        var popup_f12d8010a4d676e31643988f41da70bd = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3d688255af95b033a914a6695503af91 = $(`<div id="html_3d688255af95b033a914a6695503af91" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:33:18+00:00<br>Lat: 32.175121<br>Lon: 34.90895<br>Plate: 6362970<br>7720<br>2023-02-21 05:36:00+00:00</div>`)[0];
+                popup_f12d8010a4d676e31643988f41da70bd.setContent(html_3d688255af95b033a914a6695503af91);
+            
+        
+
+        marker_34a62932fc63e2e7be9e5d84055385b1.bindPopup(popup_f12d8010a4d676e31643988f41da70bd)
+        ;
+
+        
+    
+    
+            var marker_d1c007ee6c1beea52165ddc7bc3cbfbf = L.marker(
+                [32.174186, 34.913227],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_4378314322c1bb5abbe7556f69c433fd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "lightred", "prefix": "glyphicon"}
+            );
+            marker_d1c007ee6c1beea52165ddc7bc3cbfbf.setIcon(icon_4378314322c1bb5abbe7556f69c433fd);
+        
+    
+        var popup_80773883254c4024fbdab7cd48bd637d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_aa23f2af14583b662611c3a2f3a4df43 = $(`<div id="html_aa23f2af14583b662611c3a2f3a4df43" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:34:16+00:00<br>Lat: 32.174186<br>Lon: 34.913227<br>Plate: 6362970<br>7720<br>2023-02-21 05:36:00+00:00</div>`)[0];
+                popup_80773883254c4024fbdab7cd48bd637d.setContent(html_aa23f2af14583b662611c3a2f3a4df43);
+            
+        
+
+        marker_d1c007ee6c1beea52165ddc7bc3cbfbf.bindPopup(popup_80773883254c4024fbdab7cd48bd637d)
+        ;
+
+        
+    
+    
+            var marker_e17873aa36c39acecd3c136c2dea677f = L.marker(
+                [32.173763, 34.914932],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_a81d5816e4f09b1853d0a53e807ff541 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "lightred", "prefix": "glyphicon"}
+            );
+            marker_e17873aa36c39acecd3c136c2dea677f.setIcon(icon_a81d5816e4f09b1853d0a53e807ff541);
+        
+    
+        var popup_05aae0c2ba0e038204354b6b31c09edf = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_525bb9a2731679e999e80276bb48303d = $(`<div id="html_525bb9a2731679e999e80276bb48303d" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:35:19+00:00<br>Lat: 32.173763<br>Lon: 34.914932<br>Plate: 6362970<br>7720<br>2023-02-21 05:36:00+00:00</div>`)[0];
+                popup_05aae0c2ba0e038204354b6b31c09edf.setContent(html_525bb9a2731679e999e80276bb48303d);
+            
+        
+
+        marker_e17873aa36c39acecd3c136c2dea677f.bindPopup(popup_05aae0c2ba0e038204354b6b31c09edf)
+        ;
+
+        
+    
+    
+            var marker_9efbfc31c80322e382c864c624708551 = L.marker(
+                [32.173023, 34.918048],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_20bb1f9fc1cceae520ab745d97b78002 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "lightred", "prefix": "glyphicon"}
+            );
+            marker_9efbfc31c80322e382c864c624708551.setIcon(icon_20bb1f9fc1cceae520ab745d97b78002);
+        
+    
+        var popup_5ef3e9588e2bd2e09155dceb0467e7e9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4737ada7e5075926d2b94301ba966d60 = $(`<div id="html_4737ada7e5075926d2b94301ba966d60" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:36:17+00:00<br>Lat: 32.173023<br>Lon: 34.918048<br>Plate: 6362970<br>7720<br>2023-02-21 05:36:00+00:00</div>`)[0];
+                popup_5ef3e9588e2bd2e09155dceb0467e7e9.setContent(html_4737ada7e5075926d2b94301ba966d60);
+            
+        
+
+        marker_9efbfc31c80322e382c864c624708551.bindPopup(popup_5ef3e9588e2bd2e09155dceb0467e7e9)
+        ;
+
+        
+    
+    
+            var marker_6ec6c07f43eeefbdf36f2620cc63f6ab = L.marker(
+                [32.172676, 34.919647],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_570e892d52cfcf3baa980ed003dd4e22 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "lightred", "prefix": "glyphicon"}
+            );
+            marker_6ec6c07f43eeefbdf36f2620cc63f6ab.setIcon(icon_570e892d52cfcf3baa980ed003dd4e22);
+        
+    
+        var popup_9ce7388a8db9d7d4bdfef7eb0d916f96 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3e3a16d71a9b40a99220574335ba910a = $(`<div id="html_3e3a16d71a9b40a99220574335ba910a" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:36:44+00:00<br>Lat: 32.172676<br>Lon: 34.919647<br>Plate: 6362970<br>7720<br>2023-02-21 05:36:00+00:00</div>`)[0];
+                popup_9ce7388a8db9d7d4bdfef7eb0d916f96.setContent(html_3e3a16d71a9b40a99220574335ba910a);
+            
+        
+
+        marker_6ec6c07f43eeefbdf36f2620cc63f6ab.bindPopup(popup_9ce7388a8db9d7d4bdfef7eb0d916f96)
+        ;
+
+        
+    
+    
+            var marker_5ab8918fc4112cc82dbfbb7898d2d8fd = L.marker(
+                [32.171775, 34.924499],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_8856860eb5ec47ab99d43032f03f7ea0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "lightred", "prefix": "glyphicon"}
+            );
+            marker_5ab8918fc4112cc82dbfbb7898d2d8fd.setIcon(icon_8856860eb5ec47ab99d43032f03f7ea0);
+        
+    
+        var popup_b64b7dcb730d1e1f475ed3fa742e2ee9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d54b6041c9f96acd70abcb799e580850 = $(`<div id="html_d54b6041c9f96acd70abcb799e580850" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:38:59+00:00<br>Lat: 32.171775<br>Lon: 34.924499<br>Plate: 6362970<br>7720<br>2023-02-21 05:36:00+00:00</div>`)[0];
+                popup_b64b7dcb730d1e1f475ed3fa742e2ee9.setContent(html_d54b6041c9f96acd70abcb799e580850);
+            
+        
+
+        marker_5ab8918fc4112cc82dbfbb7898d2d8fd.bindPopup(popup_b64b7dcb730d1e1f475ed3fa742e2ee9)
+        ;
+
+        
+    
+    
+            var marker_ee5c1c7922dc6b946986b6651ab9a654 = L.marker(
+                [32.175121, 34.90895],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_5bc5075cce0796e45f9823e7dbdddc98 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "lightred", "prefix": "glyphicon"}
+            );
+            marker_ee5c1c7922dc6b946986b6651ab9a654.setIcon(icon_5bc5075cce0796e45f9823e7dbdddc98);
+        
+    
+        var popup_22c9ff18c11e5be575eb6f386f4a2c52 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9778daf1543c8e26e1b4a6439ace6ef8 = $(`<div id="html_9778daf1543c8e26e1b4a6439ace6ef8" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:33:18+00:00<br>Lat: 32.175121<br>Lon: 34.90895<br>Plate: 6362970<br>7720<br>2023-02-21 05:36:00+00:00</div>`)[0];
+                popup_22c9ff18c11e5be575eb6f386f4a2c52.setContent(html_9778daf1543c8e26e1b4a6439ace6ef8);
+            
+        
+
+        marker_ee5c1c7922dc6b946986b6651ab9a654.bindPopup(popup_22c9ff18c11e5be575eb6f386f4a2c52)
+        ;
+
+        
+    
+    
+            var marker_747eb1cd7f01f1c544b95ee1df3f6faf = L.marker(
+                [32.174186, 34.913227],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_ad016d0a50c70aa0622235913f7ed923 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "lightred", "prefix": "glyphicon"}
+            );
+            marker_747eb1cd7f01f1c544b95ee1df3f6faf.setIcon(icon_ad016d0a50c70aa0622235913f7ed923);
+        
+    
+        var popup_f78794f4bb0d291a06c0aa74f2e0479c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1765720b75f06a5161613ae6d93755d4 = $(`<div id="html_1765720b75f06a5161613ae6d93755d4" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:34:16+00:00<br>Lat: 32.174186<br>Lon: 34.913227<br>Plate: 6362970<br>7720<br>2023-02-21 05:36:00+00:00</div>`)[0];
+                popup_f78794f4bb0d291a06c0aa74f2e0479c.setContent(html_1765720b75f06a5161613ae6d93755d4);
+            
+        
+
+        marker_747eb1cd7f01f1c544b95ee1df3f6faf.bindPopup(popup_f78794f4bb0d291a06c0aa74f2e0479c)
+        ;
+
+        
+    
+    
+            var marker_de2f178794aa096b9e00cec7732ea8cc = L.marker(
+                [32.173763, 34.914932],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_ff2570f57a5e03d382a5dc94d42ce894 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "lightred", "prefix": "glyphicon"}
+            );
+            marker_de2f178794aa096b9e00cec7732ea8cc.setIcon(icon_ff2570f57a5e03d382a5dc94d42ce894);
+        
+    
+        var popup_dfd29ed6a5e843fb22c2f9fc80ee50aa = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c8a974fc0cce91ee296bea454015b655 = $(`<div id="html_c8a974fc0cce91ee296bea454015b655" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:35:19+00:00<br>Lat: 32.173763<br>Lon: 34.914932<br>Plate: 6362970<br>7720<br>2023-02-21 05:36:00+00:00</div>`)[0];
+                popup_dfd29ed6a5e843fb22c2f9fc80ee50aa.setContent(html_c8a974fc0cce91ee296bea454015b655);
+            
+        
+
+        marker_de2f178794aa096b9e00cec7732ea8cc.bindPopup(popup_dfd29ed6a5e843fb22c2f9fc80ee50aa)
+        ;
+
+        
+    
+    
+            var marker_9e3e8c783e5d2b39bdc6ff0794a7f3d8 = L.marker(
+                [32.173023, 34.918048],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_59202a9f358958bc93c989670c5f3bfe = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "lightred", "prefix": "glyphicon"}
+            );
+            marker_9e3e8c783e5d2b39bdc6ff0794a7f3d8.setIcon(icon_59202a9f358958bc93c989670c5f3bfe);
+        
+    
+        var popup_b2c542e411ae302271a25649c63d4222 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_91e658a8dbd2210fa8255b48b61c6219 = $(`<div id="html_91e658a8dbd2210fa8255b48b61c6219" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:36:17+00:00<br>Lat: 32.173023<br>Lon: 34.918048<br>Plate: 6362970<br>7720<br>2023-02-21 05:36:00+00:00</div>`)[0];
+                popup_b2c542e411ae302271a25649c63d4222.setContent(html_91e658a8dbd2210fa8255b48b61c6219);
+            
+        
+
+        marker_9e3e8c783e5d2b39bdc6ff0794a7f3d8.bindPopup(popup_b2c542e411ae302271a25649c63d4222)
+        ;
+
+        
+    
+    
+            var marker_1223622cf8715eb293a1d5f822b0281b = L.marker(
+                [32.172676, 34.919647],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_6841a6e82f9954a978a443e17edebc9b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "lightred", "prefix": "glyphicon"}
+            );
+            marker_1223622cf8715eb293a1d5f822b0281b.setIcon(icon_6841a6e82f9954a978a443e17edebc9b);
+        
+    
+        var popup_eba52e76e48a5cbd3a56a697086a30c7 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_64d1ea7fe8264c27a0cb0fb91f86e6ba = $(`<div id="html_64d1ea7fe8264c27a0cb0fb91f86e6ba" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:36:44+00:00<br>Lat: 32.172676<br>Lon: 34.919647<br>Plate: 6362970<br>7720<br>2023-02-21 05:36:00+00:00</div>`)[0];
+                popup_eba52e76e48a5cbd3a56a697086a30c7.setContent(html_64d1ea7fe8264c27a0cb0fb91f86e6ba);
+            
+        
+
+        marker_1223622cf8715eb293a1d5f822b0281b.bindPopup(popup_eba52e76e48a5cbd3a56a697086a30c7)
+        ;
+
+        
+    
+    
+            var marker_f4ee6ed4bd52ba12f94d8e615e5bc023 = L.marker(
+                [32.171775, 34.924499],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_fa07a3d7aeb16d2f764e8f48ecd7386a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "lightred", "prefix": "glyphicon"}
+            );
+            marker_f4ee6ed4bd52ba12f94d8e615e5bc023.setIcon(icon_fa07a3d7aeb16d2f764e8f48ecd7386a);
+        
+    
+        var popup_58e52011a7bfb0b6560f10d4263666f6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0a67746ed14b5caa770243abf756d467 = $(`<div id="html_0a67746ed14b5caa770243abf756d467" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:38:59+00:00<br>Lat: 32.171775<br>Lon: 34.924499<br>Plate: 6362970<br>7720<br>2023-02-21 05:36:00+00:00</div>`)[0];
+                popup_58e52011a7bfb0b6560f10d4263666f6.setContent(html_0a67746ed14b5caa770243abf756d467);
+            
+        
+
+        marker_f4ee6ed4bd52ba12f94d8e615e5bc023.bindPopup(popup_58e52011a7bfb0b6560f10d4263666f6)
+        ;
+
+        
+    
+    
+            var marker_647b266172b8ed1c0b885020716a7c3f = L.marker(
+                [32.173259, 34.925682],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_a6ad291217bfa80d2d3d44cbfcfa0516 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "lightred", "prefix": "glyphicon"}
+            );
+            marker_647b266172b8ed1c0b885020716a7c3f.setIcon(icon_a6ad291217bfa80d2d3d44cbfcfa0516);
+        
+    
+        var popup_f3f8427135dd2e2d716c305327622730 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_78438bceb34ca11b58b9e2ced4ae2cdf = $(`<div id="html_78438bceb34ca11b58b9e2ced4ae2cdf" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:39:26+00:00<br>Lat: 32.173259<br>Lon: 34.925682<br>Plate: 6362970<br>7720<br>2023-02-21 05:36:00+00:00</div>`)[0];
+                popup_f3f8427135dd2e2d716c305327622730.setContent(html_78438bceb34ca11b58b9e2ced4ae2cdf);
+            
+        
+
+        marker_647b266172b8ed1c0b885020716a7c3f.bindPopup(popup_f3f8427135dd2e2d716c305327622730)
+        ;
+
+        
+    
+    
+            var marker_0993619fb758acbfd5fc9e4820edc54c = L.marker(
+                [32.174755, 34.910526],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_9da11e44c88c147e75d5a154e299e751 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_0993619fb758acbfd5fc9e4820edc54c.setIcon(icon_9da11e44c88c147e75d5a154e299e751);
+        
+    
+        var popup_140786006eb0356dd3d4cca2e853135a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1af8eff98f600c499022abebdeea7103 = $(`<div id="html_1af8eff98f600c499022abebdeea7103" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:07:19+00:00<br>Lat: 32.174755<br>Lon: 34.910526<br>Plate: 6370770<br>7720<br>2023-02-21 05:12:00+00:00</div>`)[0];
+                popup_140786006eb0356dd3d4cca2e853135a.setContent(html_1af8eff98f600c499022abebdeea7103);
+            
+        
+
+        marker_0993619fb758acbfd5fc9e4820edc54c.bindPopup(popup_140786006eb0356dd3d4cca2e853135a)
+        ;
+
+        
+    
+    
+            var marker_5033bdc1c07060b4f7639fcf6f3477fc = L.marker(
+                [32.174041, 34.91373],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_b70699b47f319add1cec9a8744669928 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_5033bdc1c07060b4f7639fcf6f3477fc.setIcon(icon_b70699b47f319add1cec9a8744669928);
+        
+    
+        var popup_824e3197407cb2d6e778464a9790e18f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5cc0cfb92c6c7fb2b027c9972935d8ff = $(`<div id="html_5cc0cfb92c6c7fb2b027c9972935d8ff" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:08:03+00:00<br>Lat: 32.174041<br>Lon: 34.91373<br>Plate: 6370770<br>7720<br>2023-02-21 05:12:00+00:00</div>`)[0];
+                popup_824e3197407cb2d6e778464a9790e18f.setContent(html_5cc0cfb92c6c7fb2b027c9972935d8ff);
+            
+        
+
+        marker_5033bdc1c07060b4f7639fcf6f3477fc.bindPopup(popup_824e3197407cb2d6e778464a9790e18f)
+        ;
+
+        
+    
+    
+            var marker_f0e5a381a82535a564b9bf8f24c1b24a = L.marker(
+                [32.173721, 34.914966],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_fee1dd4aa1cf09f877776d4ace9fb148 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_f0e5a381a82535a564b9bf8f24c1b24a.setIcon(icon_fee1dd4aa1cf09f877776d4ace9fb148);
+        
+    
+        var popup_d13e7123b16cbaab2c01825734b52bcc = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ec901a00a5ee8be38fe10f05a38ef15d = $(`<div id="html_ec901a00a5ee8be38fe10f05a38ef15d" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:09:35+00:00<br>Lat: 32.173721<br>Lon: 34.914966<br>Plate: 6370770<br>7720<br>2023-02-21 05:12:00+00:00</div>`)[0];
+                popup_d13e7123b16cbaab2c01825734b52bcc.setContent(html_ec901a00a5ee8be38fe10f05a38ef15d);
+            
+        
+
+        marker_f0e5a381a82535a564b9bf8f24c1b24a.bindPopup(popup_d13e7123b16cbaab2c01825734b52bcc)
+        ;
+
+        
+    
+    
+            var marker_d15287c78edeb1e56294017904fc6e1d = L.marker(
+                [32.173229, 34.917083],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_cff2c456c876d98b1091541b3ea842e5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_d15287c78edeb1e56294017904fc6e1d.setIcon(icon_cff2c456c876d98b1091541b3ea842e5);
+        
+    
+        var popup_2899b32cd27baf2dd7dc217fc9e8d8b6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_213c2439229b585add14c7f976a8b055 = $(`<div id="html_213c2439229b585add14c7f976a8b055" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:10:16+00:00<br>Lat: 32.173229<br>Lon: 34.917083<br>Plate: 6370770<br>7720<br>2023-02-21 05:12:00+00:00</div>`)[0];
+                popup_2899b32cd27baf2dd7dc217fc9e8d8b6.setContent(html_213c2439229b585add14c7f976a8b055);
+            
+        
+
+        marker_d15287c78edeb1e56294017904fc6e1d.bindPopup(popup_2899b32cd27baf2dd7dc217fc9e8d8b6)
+        ;
+
+        
+    
+    
+            var marker_9433def916344e8bb3c3394bb8359d66 = L.marker(
+                [32.173023, 34.917972],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_23296cb1ac6ee701bb23748c3fbbf0f3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_9433def916344e8bb3c3394bb8359d66.setIcon(icon_23296cb1ac6ee701bb23748c3fbbf0f3);
+        
+    
+        var popup_7f4b43b0f6853888f89cbd07702752c6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4896e3fa44ae105fe2a349f42b64c072 = $(`<div id="html_4896e3fa44ae105fe2a349f42b64c072" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:11:24+00:00<br>Lat: 32.173023<br>Lon: 34.917972<br>Plate: 6370770<br>7720<br>2023-02-21 05:12:00+00:00</div>`)[0];
+                popup_7f4b43b0f6853888f89cbd07702752c6.setContent(html_4896e3fa44ae105fe2a349f42b64c072);
+            
+        
+
+        marker_9433def916344e8bb3c3394bb8359d66.bindPopup(popup_7f4b43b0f6853888f89cbd07702752c6)
+        ;
+
+        
+    
+    
+            var marker_c3998b42fb9ddcb8771991be1c7075ef = L.marker(
+                [32.172954, 34.918235],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_dd12360d10148b71382dfd736ae481a6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_c3998b42fb9ddcb8771991be1c7075ef.setIcon(icon_dd12360d10148b71382dfd736ae481a6);
+        
+    
+        var popup_ff69d9a616b702a979002d306256ef95 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_81d9cb43ca0fdcad82ba0cb1a0fa98dc = $(`<div id="html_81d9cb43ca0fdcad82ba0cb1a0fa98dc" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:12:34+00:00<br>Lat: 32.172954<br>Lon: 34.918235<br>Plate: 6370770<br>7720<br>2023-02-21 05:12:00+00:00</div>`)[0];
+                popup_ff69d9a616b702a979002d306256ef95.setContent(html_81d9cb43ca0fdcad82ba0cb1a0fa98dc);
+            
+        
+
+        marker_c3998b42fb9ddcb8771991be1c7075ef.bindPopup(popup_ff69d9a616b702a979002d306256ef95)
+        ;
+
+        
+    
+    
+            var marker_90de5ec804c99fca9dde7a844c26c4cf = L.marker(
+                [32.172954, 34.918235],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_3ff3a019a671e860802839195769b77d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_90de5ec804c99fca9dde7a844c26c4cf.setIcon(icon_3ff3a019a671e860802839195769b77d);
+        
+    
+        var popup_341d31315c47f881d386f5b283127277 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c5c238a42cf46af1f569ab4289c83866 = $(`<div id="html_c5c238a42cf46af1f569ab4289c83866" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:12:34+00:00<br>Lat: 32.172954<br>Lon: 34.918235<br>Plate: 6370770<br>7720<br>2023-02-21 05:12:00+00:00</div>`)[0];
+                popup_341d31315c47f881d386f5b283127277.setContent(html_c5c238a42cf46af1f569ab4289c83866);
+            
+        
+
+        marker_90de5ec804c99fca9dde7a844c26c4cf.bindPopup(popup_341d31315c47f881d386f5b283127277)
+        ;
+
+        
+    
+    
+            var marker_63dc8863820aaec2aa3a81cffe8ca700 = L.marker(
+                [32.172512, 34.920169],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_1da906339927b67d82d65da318424256 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_63dc8863820aaec2aa3a81cffe8ca700.setIcon(icon_1da906339927b67d82d65da318424256);
+        
+    
+        var popup_eab6ec2820e41820edefa78390670a43 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c6dc73a65c3fbc19c3abcac157028c06 = $(`<div id="html_c6dc73a65c3fbc19c3abcac157028c06" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:14:33+00:00<br>Lat: 32.172512<br>Lon: 34.920169<br>Plate: 6370770<br>7720<br>2023-02-21 05:12:00+00:00</div>`)[0];
+                popup_eab6ec2820e41820edefa78390670a43.setContent(html_c6dc73a65c3fbc19c3abcac157028c06);
+            
+        
+
+        marker_63dc8863820aaec2aa3a81cffe8ca700.bindPopup(popup_eab6ec2820e41820edefa78390670a43)
+        ;
+
+        
+    
+    
+            var marker_d751aece526188b89e50d359912b3dfd = L.marker(
+                [32.171466, 34.923637],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_4011508cff599d93936ac9db96af5d98 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_d751aece526188b89e50d359912b3dfd.setIcon(icon_4011508cff599d93936ac9db96af5d98);
+        
+    
+        var popup_e5f99b11ec62f32c02c6b93fc570e32e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_40a4965ad48e44c862613a4eae7ea4c6 = $(`<div id="html_40a4965ad48e44c862613a4eae7ea4c6" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:15:02+00:00<br>Lat: 32.171466<br>Lon: 34.923637<br>Plate: 6370770<br>7720<br>2023-02-21 05:12:00+00:00</div>`)[0];
+                popup_e5f99b11ec62f32c02c6b93fc570e32e.setContent(html_40a4965ad48e44c862613a4eae7ea4c6);
+            
+        
+
+        marker_d751aece526188b89e50d359912b3dfd.bindPopup(popup_e5f99b11ec62f32c02c6b93fc570e32e)
+        ;
+
+        
+    
+    
+            var marker_0d68865b9197106e7d02f4d6a7ff47ca = L.marker(
+                [32.17139, 34.923797],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_28853d633ce9fbf1433f32d1e090bc09 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_0d68865b9197106e7d02f4d6a7ff47ca.setIcon(icon_28853d633ce9fbf1433f32d1e090bc09);
+        
+    
+        var popup_84f63e900bc9ae2e3937365129ba443c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_be43f4b805f41e5d9356b58ff682d5a4 = $(`<div id="html_be43f4b805f41e5d9356b58ff682d5a4" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:16:10+00:00<br>Lat: 32.17139<br>Lon: 34.923797<br>Plate: 6370770<br>7720<br>2023-02-21 05:12:00+00:00</div>`)[0];
+                popup_84f63e900bc9ae2e3937365129ba443c.setContent(html_be43f4b805f41e5d9356b58ff682d5a4);
+            
+        
+
+        marker_0d68865b9197106e7d02f4d6a7ff47ca.bindPopup(popup_84f63e900bc9ae2e3937365129ba443c)
+        ;
+
+        
+    
+    
+            var marker_8c7b37f6a76e4f5f58956c141fca537e = L.marker(
+                [32.174755, 34.910526],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_020f6abeeb9bf671c7b881dcf2470b80 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_8c7b37f6a76e4f5f58956c141fca537e.setIcon(icon_020f6abeeb9bf671c7b881dcf2470b80);
+        
+    
+        var popup_9e69a9ff7164f9e575c4605f8f772bf9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9527dfa60cd5ecda13cd109b8edcbeef = $(`<div id="html_9527dfa60cd5ecda13cd109b8edcbeef" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:07:19+00:00<br>Lat: 32.174755<br>Lon: 34.910526<br>Plate: 6370770<br>7720<br>2023-02-21 05:12:00+00:00</div>`)[0];
+                popup_9e69a9ff7164f9e575c4605f8f772bf9.setContent(html_9527dfa60cd5ecda13cd109b8edcbeef);
+            
+        
+
+        marker_8c7b37f6a76e4f5f58956c141fca537e.bindPopup(popup_9e69a9ff7164f9e575c4605f8f772bf9)
+        ;
+
+        
+    
+    
+            var marker_44122914fdc19f5879b786bcc1b7b385 = L.marker(
+                [32.174041, 34.91373],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_cdf8ea6360a9816c2ec4c2e61db3a8fe = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_44122914fdc19f5879b786bcc1b7b385.setIcon(icon_cdf8ea6360a9816c2ec4c2e61db3a8fe);
+        
+    
+        var popup_f7774a031742cfe1442864b64773768d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b77a2a32d3882cc421d33b60eb32a6b1 = $(`<div id="html_b77a2a32d3882cc421d33b60eb32a6b1" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:08:03+00:00<br>Lat: 32.174041<br>Lon: 34.91373<br>Plate: 6370770<br>7720<br>2023-02-21 05:12:00+00:00</div>`)[0];
+                popup_f7774a031742cfe1442864b64773768d.setContent(html_b77a2a32d3882cc421d33b60eb32a6b1);
+            
+        
+
+        marker_44122914fdc19f5879b786bcc1b7b385.bindPopup(popup_f7774a031742cfe1442864b64773768d)
+        ;
+
+        
+    
+    
+            var marker_a041eedfd68373e4d121eae7119ad49a = L.marker(
+                [32.173721, 34.914966],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_192feff8244a0a330b32512e1c7786bc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_a041eedfd68373e4d121eae7119ad49a.setIcon(icon_192feff8244a0a330b32512e1c7786bc);
+        
+    
+        var popup_b9aebbaf2307ca54806756bff1dcef3e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_646f48f1997a5833cf56c6a4fd3328f8 = $(`<div id="html_646f48f1997a5833cf56c6a4fd3328f8" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:09:35+00:00<br>Lat: 32.173721<br>Lon: 34.914966<br>Plate: 6370770<br>7720<br>2023-02-21 05:12:00+00:00</div>`)[0];
+                popup_b9aebbaf2307ca54806756bff1dcef3e.setContent(html_646f48f1997a5833cf56c6a4fd3328f8);
+            
+        
+
+        marker_a041eedfd68373e4d121eae7119ad49a.bindPopup(popup_b9aebbaf2307ca54806756bff1dcef3e)
+        ;
+
+        
+    
+    
+            var marker_ba99d0826e020fc262c16dbe4de0465c = L.marker(
+                [32.173229, 34.917083],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_d1917e6bdddc1976ddcb4f4d974a2ae7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_ba99d0826e020fc262c16dbe4de0465c.setIcon(icon_d1917e6bdddc1976ddcb4f4d974a2ae7);
+        
+    
+        var popup_44aa6d6df0fe7edb9ca22e265b85bbc9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_67b60a60bf63c4edeb85799c90b2907a = $(`<div id="html_67b60a60bf63c4edeb85799c90b2907a" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:10:16+00:00<br>Lat: 32.173229<br>Lon: 34.917083<br>Plate: 6370770<br>7720<br>2023-02-21 05:12:00+00:00</div>`)[0];
+                popup_44aa6d6df0fe7edb9ca22e265b85bbc9.setContent(html_67b60a60bf63c4edeb85799c90b2907a);
+            
+        
+
+        marker_ba99d0826e020fc262c16dbe4de0465c.bindPopup(popup_44aa6d6df0fe7edb9ca22e265b85bbc9)
+        ;
+
+        
+    
+    
+            var marker_33dda3a680b5389af5a6ef179133454e = L.marker(
+                [32.173023, 34.917972],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_3b640d32a088b1e8b6baf069f86d1129 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_33dda3a680b5389af5a6ef179133454e.setIcon(icon_3b640d32a088b1e8b6baf069f86d1129);
+        
+    
+        var popup_68b833e0ebd800f67fe6104d048644b7 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_16a20bec4638566c2c7dbf550bad527d = $(`<div id="html_16a20bec4638566c2c7dbf550bad527d" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:11:24+00:00<br>Lat: 32.173023<br>Lon: 34.917972<br>Plate: 6370770<br>7720<br>2023-02-21 05:12:00+00:00</div>`)[0];
+                popup_68b833e0ebd800f67fe6104d048644b7.setContent(html_16a20bec4638566c2c7dbf550bad527d);
+            
+        
+
+        marker_33dda3a680b5389af5a6ef179133454e.bindPopup(popup_68b833e0ebd800f67fe6104d048644b7)
+        ;
+
+        
+    
+    
+            var marker_9427a5ab600b2aa9e43795d22586f152 = L.marker(
+                [32.172954, 34.918235],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_dfa85069c437e3010029263a38573835 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_9427a5ab600b2aa9e43795d22586f152.setIcon(icon_dfa85069c437e3010029263a38573835);
+        
+    
+        var popup_4a92f041a3bd9060efb0a3c8940be621 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9727ea9fedc50897e34d023a5a9d1ab6 = $(`<div id="html_9727ea9fedc50897e34d023a5a9d1ab6" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:12:34+00:00<br>Lat: 32.172954<br>Lon: 34.918235<br>Plate: 6370770<br>7720<br>2023-02-21 05:12:00+00:00</div>`)[0];
+                popup_4a92f041a3bd9060efb0a3c8940be621.setContent(html_9727ea9fedc50897e34d023a5a9d1ab6);
+            
+        
+
+        marker_9427a5ab600b2aa9e43795d22586f152.bindPopup(popup_4a92f041a3bd9060efb0a3c8940be621)
+        ;
+
+        
+    
+    
+            var marker_bb2a6bced8e32fe4af6db4c9235656cd = L.marker(
+                [32.172954, 34.918235],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_444514b2719523b17365cf510b5c7e8e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_bb2a6bced8e32fe4af6db4c9235656cd.setIcon(icon_444514b2719523b17365cf510b5c7e8e);
+        
+    
+        var popup_2990a0dbada08a9ae6cc8082b852b84d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_015b1f8fb2f43bd30e35fcbbba4ceb43 = $(`<div id="html_015b1f8fb2f43bd30e35fcbbba4ceb43" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:12:34+00:00<br>Lat: 32.172954<br>Lon: 34.918235<br>Plate: 6370770<br>7720<br>2023-02-21 05:12:00+00:00</div>`)[0];
+                popup_2990a0dbada08a9ae6cc8082b852b84d.setContent(html_015b1f8fb2f43bd30e35fcbbba4ceb43);
+            
+        
+
+        marker_bb2a6bced8e32fe4af6db4c9235656cd.bindPopup(popup_2990a0dbada08a9ae6cc8082b852b84d)
+        ;
+
+        
+    
+    
+            var marker_17cc26ef220fcaf079b6d3377654eae7 = L.marker(
+                [32.172512, 34.920169],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_0f692ab3839aeecc758203eff6a7849f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_17cc26ef220fcaf079b6d3377654eae7.setIcon(icon_0f692ab3839aeecc758203eff6a7849f);
+        
+    
+        var popup_524a47a148893bcf98f0b38793466b51 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8fc85c7d72729f08595c29bcb7a21612 = $(`<div id="html_8fc85c7d72729f08595c29bcb7a21612" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:14:33+00:00<br>Lat: 32.172512<br>Lon: 34.920169<br>Plate: 6370770<br>7720<br>2023-02-21 05:12:00+00:00</div>`)[0];
+                popup_524a47a148893bcf98f0b38793466b51.setContent(html_8fc85c7d72729f08595c29bcb7a21612);
+            
+        
+
+        marker_17cc26ef220fcaf079b6d3377654eae7.bindPopup(popup_524a47a148893bcf98f0b38793466b51)
+        ;
+
+        
+    
+    
+            var marker_9ceb026875df577133c896fb830b4907 = L.marker(
+                [32.171466, 34.923637],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_eaed167b9e02edf0c6b52b63375da25b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_9ceb026875df577133c896fb830b4907.setIcon(icon_eaed167b9e02edf0c6b52b63375da25b);
+        
+    
+        var popup_cd11063bc25519d3ad717bc63bd138be = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_97bb9c10da31a7699c79054915c20630 = $(`<div id="html_97bb9c10da31a7699c79054915c20630" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:15:02+00:00<br>Lat: 32.171466<br>Lon: 34.923637<br>Plate: 6370770<br>7720<br>2023-02-21 05:12:00+00:00</div>`)[0];
+                popup_cd11063bc25519d3ad717bc63bd138be.setContent(html_97bb9c10da31a7699c79054915c20630);
+            
+        
+
+        marker_9ceb026875df577133c896fb830b4907.bindPopup(popup_cd11063bc25519d3ad717bc63bd138be)
+        ;
+
+        
+    
+    
+            var marker_37b973a44cc5eb90771a8020a92e46f1 = L.marker(
+                [32.17139, 34.923797],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_31c6daefc567689c3ee95bcb421763ef = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_37b973a44cc5eb90771a8020a92e46f1.setIcon(icon_31c6daefc567689c3ee95bcb421763ef);
+        
+    
+        var popup_e56717aa95613559de5c95151009c6f9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6875ddbb4c252585dd6deb23d50d54c3 = $(`<div id="html_6875ddbb4c252585dd6deb23d50d54c3" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:16:10+00:00<br>Lat: 32.17139<br>Lon: 34.923797<br>Plate: 6370770<br>7720<br>2023-02-21 05:12:00+00:00</div>`)[0];
+                popup_e56717aa95613559de5c95151009c6f9.setContent(html_6875ddbb4c252585dd6deb23d50d54c3);
+            
+        
+
+        marker_37b973a44cc5eb90771a8020a92e46f1.bindPopup(popup_e56717aa95613559de5c95151009c6f9)
+        ;
+
+        
+    
+    
+            var marker_1e0c9d2c317c2308e155be9bef139100 = L.marker(
+                [32.17424, 34.92625],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_dd84702b7d921f9abfd761f492553d2d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_1e0c9d2c317c2308e155be9bef139100.setIcon(icon_dd84702b7d921f9abfd761f492553d2d);
+        
+    
+        var popup_6ebf91bee2546187bec68db1e1fbd80f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3c93b22744d81f9007b2e9bcf1cc8893 = $(`<div id="html_3c93b22744d81f9007b2e9bcf1cc8893" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:17:33+00:00<br>Lat: 32.17424<br>Lon: 34.92625<br>Plate: 6370770<br>7720<br>2023-02-21 05:12:00+00:00</div>`)[0];
+                popup_6ebf91bee2546187bec68db1e1fbd80f.setContent(html_3c93b22744d81f9007b2e9bcf1cc8893);
+            
+        
+
+        marker_1e0c9d2c317c2308e155be9bef139100.bindPopup(popup_6ebf91bee2546187bec68db1e1fbd80f)
+        ;
+
+        
+    
+    
+            var marker_b1adc468759766b6b4bafb1c5264939d = L.marker(
+                [32.178627, 34.927444],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_b1c4d3216f1912805f093c42afcf87a6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_b1adc468759766b6b4bafb1c5264939d.setIcon(icon_b1c4d3216f1912805f093c42afcf87a6);
+        
+    
+        var popup_15dcb112933c3785af907486b72b89dd = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bf459e72592b72edd33a43ce1badcf7c = $(`<div id="html_bf459e72592b72edd33a43ce1badcf7c" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:25:00+00:00<br>Lat: 32.178627<br>Lon: 34.927444<br>Plate: 6370770<br>28143<br>2023-02-21 06:30:00+00:00</div>`)[0];
+                popup_15dcb112933c3785af907486b72b89dd.setContent(html_bf459e72592b72edd33a43ce1badcf7c);
+            
+        
+
+        marker_b1adc468759766b6b4bafb1c5264939d.bindPopup(popup_15dcb112933c3785af907486b72b89dd)
+        ;
+
+        
+    
+    
+            var marker_ed2609c4e2e175dce2dbae6a8772c3f2 = L.marker(
+                [32.178627, 34.927444],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_4fb10291a45da7ddcc082f268bc6ce2c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_ed2609c4e2e175dce2dbae6a8772c3f2.setIcon(icon_4fb10291a45da7ddcc082f268bc6ce2c);
+        
+    
+        var popup_0a70286927eca10e009bceb14553edc3 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4076a9517b1199c32551d661b310d973 = $(`<div id="html_4076a9517b1199c32551d661b310d973" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:25:00+00:00<br>Lat: 32.178627<br>Lon: 34.927444<br>Plate: 6370770<br>28143<br>2023-02-21 06:30:00+00:00</div>`)[0];
+                popup_0a70286927eca10e009bceb14553edc3.setContent(html_4076a9517b1199c32551d661b310d973);
+            
+        
+
+        marker_ed2609c4e2e175dce2dbae6a8772c3f2.bindPopup(popup_0a70286927eca10e009bceb14553edc3)
+        ;
+
+        
+    
+    
+            var marker_dba680b8375110b0b6e412c3d0d35e00 = L.marker(
+                [32.178627, 34.927444],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_22e166c71f209f11c14f9561023987ae = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_dba680b8375110b0b6e412c3d0d35e00.setIcon(icon_22e166c71f209f11c14f9561023987ae);
+        
+    
+        var popup_859ef8a24a7634e5a6fef06bfd22ffaa = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_dc63fb45a6f29aa8365292943d6efc30 = $(`<div id="html_dc63fb45a6f29aa8365292943d6efc30" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:25:00+00:00<br>Lat: 32.178627<br>Lon: 34.927444<br>Plate: 6370770<br>28143<br>2023-02-21 06:30:00+00:00</div>`)[0];
+                popup_859ef8a24a7634e5a6fef06bfd22ffaa.setContent(html_dc63fb45a6f29aa8365292943d6efc30);
+            
+        
+
+        marker_dba680b8375110b0b6e412c3d0d35e00.bindPopup(popup_859ef8a24a7634e5a6fef06bfd22ffaa)
+        ;
+
+        
+    
+    
+            var marker_104737c14e12636a6082f205ef091e4c = L.marker(
+                [32.178627, 34.927444],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_3b436bc1c6daf7abf9884d3b94b2006f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_104737c14e12636a6082f205ef091e4c.setIcon(icon_3b436bc1c6daf7abf9884d3b94b2006f);
+        
+    
+        var popup_2698136f420de246912a1e25103ef0f2 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0af1babbd7d19c1a6c8064f5c7bbe8a5 = $(`<div id="html_0af1babbd7d19c1a6c8064f5c7bbe8a5" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:25:00+00:00<br>Lat: 32.178627<br>Lon: 34.927444<br>Plate: 6370770<br>28143<br>2023-02-21 06:30:00+00:00</div>`)[0];
+                popup_2698136f420de246912a1e25103ef0f2.setContent(html_0af1babbd7d19c1a6c8064f5c7bbe8a5);
+            
+        
+
+        marker_104737c14e12636a6082f205ef091e4c.bindPopup(popup_2698136f420de246912a1e25103ef0f2)
+        ;
+
+        
+    
+    
+            var marker_c6b534a1e3c257535fec5b119c324a22 = L.marker(
+                [32.178627, 34.927444],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_6d690bedb32d604bf4830aa083141313 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_c6b534a1e3c257535fec5b119c324a22.setIcon(icon_6d690bedb32d604bf4830aa083141313);
+        
+    
+        var popup_3a4c77a5666cb7d6725004e576812c27 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0dd308cf40a97641439b10b8fa79ec20 = $(`<div id="html_0dd308cf40a97641439b10b8fa79ec20" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:25:00+00:00<br>Lat: 32.178627<br>Lon: 34.927444<br>Plate: 6370770<br>28143<br>2023-02-21 06:30:00+00:00</div>`)[0];
+                popup_3a4c77a5666cb7d6725004e576812c27.setContent(html_0dd308cf40a97641439b10b8fa79ec20);
+            
+        
+
+        marker_c6b534a1e3c257535fec5b119c324a22.bindPopup(popup_3a4c77a5666cb7d6725004e576812c27)
+        ;
+
+        
+    
+    
+            var marker_f8d8d91d71312e7d46c0d3038016a79c = L.marker(
+                [32.178627, 34.927444],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_6c342068b0d59b6ae617e70c1e559f11 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_f8d8d91d71312e7d46c0d3038016a79c.setIcon(icon_6c342068b0d59b6ae617e70c1e559f11);
+        
+    
+        var popup_3e6c8495a6625cf9bd0e435e6145153c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a9d293edab90328e6a91f7f6a2a10c2a = $(`<div id="html_a9d293edab90328e6a91f7f6a2a10c2a" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:30:00+00:00<br>Lat: 32.178627<br>Lon: 34.927444<br>Plate: 6370770<br>28143<br>2023-02-21 06:30:00+00:00</div>`)[0];
+                popup_3e6c8495a6625cf9bd0e435e6145153c.setContent(html_a9d293edab90328e6a91f7f6a2a10c2a);
+            
+        
+
+        marker_f8d8d91d71312e7d46c0d3038016a79c.bindPopup(popup_3e6c8495a6625cf9bd0e435e6145153c)
+        ;
+
+        
+    
+    
+            var marker_4e84cb121c5f4271373b59536f83f171 = L.marker(
+                [32.178352, 34.927921],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_a563374fd84317291c75c5c37a13efa4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "beige", "prefix": "glyphicon"}
+            );
+            marker_4e84cb121c5f4271373b59536f83f171.setIcon(icon_a563374fd84317291c75c5c37a13efa4);
+        
+    
+        var popup_03146c7b1880b288fc1f3633c5a22522 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_44da6002a09f372f80e43641d9babe85 = $(`<div id="html_44da6002a09f372f80e43641d9babe85" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:21:20+00:00<br>Lat: 32.178352<br>Lon: 34.927921<br>Plate: 6374470<br>7929<br>2023-02-21 05:15:00+00:00</div>`)[0];
+                popup_03146c7b1880b288fc1f3633c5a22522.setContent(html_44da6002a09f372f80e43641d9babe85);
+            
+        
+
+        marker_4e84cb121c5f4271373b59536f83f171.bindPopup(popup_03146c7b1880b288fc1f3633c5a22522)
+        ;
+
+        
+    
+    
+            var marker_e07c70db08da31f04d20ba5c3a34f798 = L.marker(
+                [32.178222, 34.927215],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_87b057c7932ac0e8eddf6f62877d6e15 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_e07c70db08da31f04d20ba5c3a34f798.setIcon(icon_87b057c7932ac0e8eddf6f62877d6e15);
+        
+    
+        var popup_649ff7d2bcd0dbd9b40599e7e9f7dd77 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7c3313634ebc3cdb69bfadac706a84a9 = $(`<div id="html_7c3313634ebc3cdb69bfadac706a84a9" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:05:00+00:00<br>Lat: 32.178222<br>Lon: 34.927215<br>Plate: 6375532<br>727<br>2023-02-21 06:10:00+00:00</div>`)[0];
+                popup_649ff7d2bcd0dbd9b40599e7e9f7dd77.setContent(html_7c3313634ebc3cdb69bfadac706a84a9);
+            
+        
+
+        marker_e07c70db08da31f04d20ba5c3a34f798.bindPopup(popup_649ff7d2bcd0dbd9b40599e7e9f7dd77)
+        ;
+
+        
+    
+    
+            var marker_b6468c2a6ea7bf4a68e0b3f05886bbf2 = L.marker(
+                [32.178222, 34.927215],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_4ab350990b355e14e10cef42b31db83b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_b6468c2a6ea7bf4a68e0b3f05886bbf2.setIcon(icon_4ab350990b355e14e10cef42b31db83b);
+        
+    
+        var popup_ab7aa2037fcc8ef2def4f59d8dde8d3e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_217cf7b95671a2f8ae6fd0541e018338 = $(`<div id="html_217cf7b95671a2f8ae6fd0541e018338" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:05:00+00:00<br>Lat: 32.178222<br>Lon: 34.927215<br>Plate: 6375532<br>727<br>2023-02-21 06:10:00+00:00</div>`)[0];
+                popup_ab7aa2037fcc8ef2def4f59d8dde8d3e.setContent(html_217cf7b95671a2f8ae6fd0541e018338);
+            
+        
+
+        marker_b6468c2a6ea7bf4a68e0b3f05886bbf2.bindPopup(popup_ab7aa2037fcc8ef2def4f59d8dde8d3e)
+        ;
+
+        
+    
+    
+            var marker_3dc47f84587c3b1a1d7c9be4979b3022 = L.marker(
+                [32.178222, 34.927215],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_8d52758117defcffc51a27fbe2ce8a68 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_3dc47f84587c3b1a1d7c9be4979b3022.setIcon(icon_8d52758117defcffc51a27fbe2ce8a68);
+        
+    
+        var popup_fc62b46f02af63f8e3e922ea41d9b3b1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_cecbce055ba278bceae8acd4861720dd = $(`<div id="html_cecbce055ba278bceae8acd4861720dd" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:05:00+00:00<br>Lat: 32.178222<br>Lon: 34.927215<br>Plate: 6375532<br>727<br>2023-02-21 06:10:00+00:00</div>`)[0];
+                popup_fc62b46f02af63f8e3e922ea41d9b3b1.setContent(html_cecbce055ba278bceae8acd4861720dd);
+            
+        
+
+        marker_3dc47f84587c3b1a1d7c9be4979b3022.bindPopup(popup_fc62b46f02af63f8e3e922ea41d9b3b1)
+        ;
+
+        
+    
+    
+            var marker_9a53769ad25781eeda0e616f891f2ad7 = L.marker(
+                [32.178222, 34.927215],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_07ad02b28f27978efa1223d7a4c71fa8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_9a53769ad25781eeda0e616f891f2ad7.setIcon(icon_07ad02b28f27978efa1223d7a4c71fa8);
+        
+    
+        var popup_67ad598c261b630d465d79477585cf32 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_478783d95999ff0fd7228d93e7e2ae73 = $(`<div id="html_478783d95999ff0fd7228d93e7e2ae73" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:05:00+00:00<br>Lat: 32.178222<br>Lon: 34.927215<br>Plate: 6375532<br>727<br>2023-02-21 06:10:00+00:00</div>`)[0];
+                popup_67ad598c261b630d465d79477585cf32.setContent(html_478783d95999ff0fd7228d93e7e2ae73);
+            
+        
+
+        marker_9a53769ad25781eeda0e616f891f2ad7.bindPopup(popup_67ad598c261b630d465d79477585cf32)
+        ;
+
+        
+    
+    
+            var marker_304dbf8346a7156f1626c45098345db9 = L.marker(
+                [32.178222, 34.927215],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_9e32488b248fb503a4a24d72364fbe24 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_304dbf8346a7156f1626c45098345db9.setIcon(icon_9e32488b248fb503a4a24d72364fbe24);
+        
+    
+        var popup_be36d12472d94aa56f203f69f677279e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ac0458698ab28038924ce85765833ba2 = $(`<div id="html_ac0458698ab28038924ce85765833ba2" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:05:00+00:00<br>Lat: 32.178222<br>Lon: 34.927215<br>Plate: 6375532<br>727<br>2023-02-21 06:10:00+00:00</div>`)[0];
+                popup_be36d12472d94aa56f203f69f677279e.setContent(html_ac0458698ab28038924ce85765833ba2);
+            
+        
+
+        marker_304dbf8346a7156f1626c45098345db9.bindPopup(popup_be36d12472d94aa56f203f69f677279e)
+        ;
+
+        
+    
+    
+            var marker_a4cde09fdc530420722e13905dac1821 = L.marker(
+                [32.178222, 34.927398],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_8c2ac5c8f4fd0bdb5ec678496581d08a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkgreen", "prefix": "glyphicon"}
+            );
+            marker_a4cde09fdc530420722e13905dac1821.setIcon(icon_8c2ac5c8f4fd0bdb5ec678496581d08a);
+        
+    
+        var popup_f5f14bf6c1f5a27b7578e98ea7a48045 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_aeb47f1c46280e8619b06e9d57a929fc = $(`<div id="html_aeb47f1c46280e8619b06e9d57a929fc" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:10:00+00:00<br>Lat: 32.178222<br>Lon: 34.927398<br>Plate: 6376270<br>7716<br>2023-02-21 06:15:00+00:00</div>`)[0];
+                popup_f5f14bf6c1f5a27b7578e98ea7a48045.setContent(html_aeb47f1c46280e8619b06e9d57a929fc);
+            
+        
+
+        marker_a4cde09fdc530420722e13905dac1821.bindPopup(popup_f5f14bf6c1f5a27b7578e98ea7a48045)
+        ;
+
+        
+    
+    
+            var marker_c633682b8ed588b94745f25c58890469 = L.marker(
+                [32.178222, 34.927398],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_bceb8449219767db6b511632ed295819 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkgreen", "prefix": "glyphicon"}
+            );
+            marker_c633682b8ed588b94745f25c58890469.setIcon(icon_bceb8449219767db6b511632ed295819);
+        
+    
+        var popup_756815773462ec69604ec863cdff2c47 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_217406d880d563fd3d4d8ba3ee08aad2 = $(`<div id="html_217406d880d563fd3d4d8ba3ee08aad2" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:10:00+00:00<br>Lat: 32.178222<br>Lon: 34.927398<br>Plate: 6376270<br>7716<br>2023-02-21 06:15:00+00:00</div>`)[0];
+                popup_756815773462ec69604ec863cdff2c47.setContent(html_217406d880d563fd3d4d8ba3ee08aad2);
+            
+        
+
+        marker_c633682b8ed588b94745f25c58890469.bindPopup(popup_756815773462ec69604ec863cdff2c47)
+        ;
+
+        
+    
+    
+            var marker_be5e0321772534447270c3cb0e57045b = L.marker(
+                [32.178222, 34.927398],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_bbe74efc9d2369c3dc652a11478191e9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkgreen", "prefix": "glyphicon"}
+            );
+            marker_be5e0321772534447270c3cb0e57045b.setIcon(icon_bbe74efc9d2369c3dc652a11478191e9);
+        
+    
+        var popup_b1e849cd2208287da4355a43c79eaed7 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f3230ab5d1da2305fc421a4b3f481fc9 = $(`<div id="html_f3230ab5d1da2305fc421a4b3f481fc9" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:10:00+00:00<br>Lat: 32.178222<br>Lon: 34.927398<br>Plate: 6376270<br>7716<br>2023-02-21 06:15:00+00:00</div>`)[0];
+                popup_b1e849cd2208287da4355a43c79eaed7.setContent(html_f3230ab5d1da2305fc421a4b3f481fc9);
+            
+        
+
+        marker_be5e0321772534447270c3cb0e57045b.bindPopup(popup_b1e849cd2208287da4355a43c79eaed7)
+        ;
+
+        
+    
+    
+            var marker_baf12f5e1c9d2f3d3ab3627d37861084 = L.marker(
+                [32.178222, 34.927398],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_873bfcbf3d467420920d29f4f14d06fe = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkgreen", "prefix": "glyphicon"}
+            );
+            marker_baf12f5e1c9d2f3d3ab3627d37861084.setIcon(icon_873bfcbf3d467420920d29f4f14d06fe);
+        
+    
+        var popup_e92bd5d5ed148833ca4b774888d877bd = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_96734f34dbb3c96b305758e21f590df2 = $(`<div id="html_96734f34dbb3c96b305758e21f590df2" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:10:00+00:00<br>Lat: 32.178222<br>Lon: 34.927398<br>Plate: 6376270<br>7716<br>2023-02-21 06:15:00+00:00</div>`)[0];
+                popup_e92bd5d5ed148833ca4b774888d877bd.setContent(html_96734f34dbb3c96b305758e21f590df2);
+            
+        
+
+        marker_baf12f5e1c9d2f3d3ab3627d37861084.bindPopup(popup_e92bd5d5ed148833ca4b774888d877bd)
+        ;
+
+        
+    
+    
+            var marker_0499850a65cf9f822c00e2d38ea299ea = L.marker(
+                [32.178222, 34.927398],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_678fccb5bcad75be6d746fab05aa321b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkgreen", "prefix": "glyphicon"}
+            );
+            marker_0499850a65cf9f822c00e2d38ea299ea.setIcon(icon_678fccb5bcad75be6d746fab05aa321b);
+        
+    
+        var popup_ebf6dddefa01e950f3dec7fa0ff8504e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_47ab6c9f185f6e2b598731df5544a8f1 = $(`<div id="html_47ab6c9f185f6e2b598731df5544a8f1" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:10:00+00:00<br>Lat: 32.178222<br>Lon: 34.927398<br>Plate: 6376270<br>7716<br>2023-02-21 06:15:00+00:00</div>`)[0];
+                popup_ebf6dddefa01e950f3dec7fa0ff8504e.setContent(html_47ab6c9f185f6e2b598731df5544a8f1);
+            
+        
+
+        marker_0499850a65cf9f822c00e2d38ea299ea.bindPopup(popup_ebf6dddefa01e950f3dec7fa0ff8504e)
+        ;
+
+        
+    
+    
+            var marker_65b9bc037de9584d610cb54f4dade5b6 = L.marker(
+                [32.178359, 34.92707],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_3587e75173d7c6a9d09dd28ce0447a44 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkgreen", "prefix": "glyphicon"}
+            );
+            marker_65b9bc037de9584d610cb54f4dade5b6.setIcon(icon_3587e75173d7c6a9d09dd28ce0447a44);
+        
+    
+        var popup_60b6184f9601fcf10548a6b99a0f64d3 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5716d686eb047e1e82d0ebb9a15f9299 = $(`<div id="html_5716d686eb047e1e82d0ebb9a15f9299" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:15:00+00:00<br>Lat: 32.178359<br>Lon: 34.92707<br>Plate: 6376270<br>7716<br>2023-02-21 06:15:00+00:00</div>`)[0];
+                popup_60b6184f9601fcf10548a6b99a0f64d3.setContent(html_5716d686eb047e1e82d0ebb9a15f9299);
+            
+        
+
+        marker_65b9bc037de9584d610cb54f4dade5b6.bindPopup(popup_60b6184f9601fcf10548a6b99a0f64d3)
+        ;
+
+        
+    
+    
+            var marker_377d43217cb34cb157372a69e0ac814f = L.marker(
+                [32.178833, 34.92839],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_d53d90f1a674a0a12da92c2d18c89876 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkgreen", "prefix": "glyphicon"}
+            );
+            marker_377d43217cb34cb157372a69e0ac814f.setIcon(icon_d53d90f1a674a0a12da92c2d18c89876);
+        
+    
+        var popup_6e302e6e1ec3e60fd602d9b521914c0d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e13be4268260235efc550c747829267c = $(`<div id="html_e13be4268260235efc550c747829267c" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:16:21+00:00<br>Lat: 32.178833<br>Lon: 34.92839<br>Plate: 6376270<br>7716<br>2023-02-21 06:15:00+00:00</div>`)[0];
+                popup_6e302e6e1ec3e60fd602d9b521914c0d.setContent(html_e13be4268260235efc550c747829267c);
+            
+        
+
+        marker_377d43217cb34cb157372a69e0ac814f.bindPopup(popup_6e302e6e1ec3e60fd602d9b521914c0d)
+        ;
+
+        
+    
+    
+            var marker_64fa021faa14c39eb8ca48b6f1bc6ab6 = L.marker(
+                [32.178531, 34.927471],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_47a7636604b1879b3ed1b936dd5c14f3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "lightgreen", "prefix": "glyphicon"}
+            );
+            marker_64fa021faa14c39eb8ca48b6f1bc6ab6.setIcon(icon_47a7636604b1879b3ed1b936dd5c14f3);
+        
+    
+        var popup_c81f5360e24a5762d919c651cad0ba74 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4174c24c71ce5951dfca5da115294284 = $(`<div id="html_4174c24c71ce5951dfca5da115294284" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:30:00+00:00<br>Lat: 32.178531<br>Lon: 34.927471<br>Plate: 6377270<br>7878<br>2023-02-21 06:35:00+00:00</div>`)[0];
+                popup_c81f5360e24a5762d919c651cad0ba74.setContent(html_4174c24c71ce5951dfca5da115294284);
+            
+        
+
+        marker_64fa021faa14c39eb8ca48b6f1bc6ab6.bindPopup(popup_c81f5360e24a5762d919c651cad0ba74)
+        ;
+
+        
+    
+    
+            var marker_decc3df00b8f037582466776995e3731 = L.marker(
+                [32.178531, 34.927471],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_07de0d8b01a975293c29f4f1df181c30 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "lightgreen", "prefix": "glyphicon"}
+            );
+            marker_decc3df00b8f037582466776995e3731.setIcon(icon_07de0d8b01a975293c29f4f1df181c30);
+        
+    
+        var popup_0002e9b9897dad02753811da19b6d67a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7ea7b24b42f7154ac90a77655ee24901 = $(`<div id="html_7ea7b24b42f7154ac90a77655ee24901" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:30:00+00:00<br>Lat: 32.178531<br>Lon: 34.927471<br>Plate: 6377270<br>7878<br>2023-02-21 06:35:00+00:00</div>`)[0];
+                popup_0002e9b9897dad02753811da19b6d67a.setContent(html_7ea7b24b42f7154ac90a77655ee24901);
+            
+        
+
+        marker_decc3df00b8f037582466776995e3731.bindPopup(popup_0002e9b9897dad02753811da19b6d67a)
+        ;
+
+        
+    
+    
+            var marker_cc2e9673a41dedfdaa500a9a99bcc7c6 = L.marker(
+                [32.178531, 34.927471],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_f24cc52a518487bda082d492cb6171ab = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "lightgreen", "prefix": "glyphicon"}
+            );
+            marker_cc2e9673a41dedfdaa500a9a99bcc7c6.setIcon(icon_f24cc52a518487bda082d492cb6171ab);
+        
+    
+        var popup_ab76e01a33162c60e55cdc6abd053b11 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d3fc639113bb17a865654561a311b9b9 = $(`<div id="html_d3fc639113bb17a865654561a311b9b9" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:30:00+00:00<br>Lat: 32.178531<br>Lon: 34.927471<br>Plate: 6377270<br>7878<br>2023-02-21 06:35:00+00:00</div>`)[0];
+                popup_ab76e01a33162c60e55cdc6abd053b11.setContent(html_d3fc639113bb17a865654561a311b9b9);
+            
+        
+
+        marker_cc2e9673a41dedfdaa500a9a99bcc7c6.bindPopup(popup_ab76e01a33162c60e55cdc6abd053b11)
+        ;
+
+        
+    
+    
+            var marker_34782c7d548c3867c4d16eea0de6e886 = L.marker(
+                [32.178531, 34.927471],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_19c09673442354e0d94c3f26fb481a85 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "lightgreen", "prefix": "glyphicon"}
+            );
+            marker_34782c7d548c3867c4d16eea0de6e886.setIcon(icon_19c09673442354e0d94c3f26fb481a85);
+        
+    
+        var popup_413bb49eab7e0b0b8ccc9a391b5a67b4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_249178243662d48f7fe637e1a999e37d = $(`<div id="html_249178243662d48f7fe637e1a999e37d" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:30:00+00:00<br>Lat: 32.178531<br>Lon: 34.927471<br>Plate: 6377270<br>7878<br>2023-02-21 06:35:00+00:00</div>`)[0];
+                popup_413bb49eab7e0b0b8ccc9a391b5a67b4.setContent(html_249178243662d48f7fe637e1a999e37d);
+            
+        
+
+        marker_34782c7d548c3867c4d16eea0de6e886.bindPopup(popup_413bb49eab7e0b0b8ccc9a391b5a67b4)
+        ;
+
+        
+    
+    
+            var marker_a460028907d1570527c688c4c95316a8 = L.marker(
+                [32.178531, 34.927471],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_25c1fb4dc821f3ea91d8689805605bb7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "lightgreen", "prefix": "glyphicon"}
+            );
+            marker_a460028907d1570527c688c4c95316a8.setIcon(icon_25c1fb4dc821f3ea91d8689805605bb7);
+        
+    
+        var popup_8430ce55aa1c544294e9038b1aaa883f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e253a7d82f5f52890e5bf10bbc2805e8 = $(`<div id="html_e253a7d82f5f52890e5bf10bbc2805e8" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:30:00+00:00<br>Lat: 32.178531<br>Lon: 34.927471<br>Plate: 6377270<br>7878<br>2023-02-21 06:35:00+00:00</div>`)[0];
+                popup_8430ce55aa1c544294e9038b1aaa883f.setContent(html_e253a7d82f5f52890e5bf10bbc2805e8);
+            
+        
+
+        marker_a460028907d1570527c688c4c95316a8.bindPopup(popup_8430ce55aa1c544294e9038b1aaa883f)
+        ;
+
+        
+    
+    
+            var marker_186c099436693a35d638945f20fed3c3 = L.marker(
+                [32.178302, 34.927932],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_796673160f274a310c512c0db087331c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkblue", "prefix": "glyphicon"}
+            );
+            marker_186c099436693a35d638945f20fed3c3.setIcon(icon_796673160f274a310c512c0db087331c);
+        
+    
+        var popup_487057ad2dfb268f0a98baaa9ae6c988 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_14d072a587541ca1907acdc215b3c869 = $(`<div id="html_14d072a587541ca1907acdc215b3c869" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:13:07+00:00<br>Lat: 32.178302<br>Lon: 34.927932<br>Plate: 65239401<br>29488<br>2023-02-21 06:15:00+00:00</div>`)[0];
+                popup_487057ad2dfb268f0a98baaa9ae6c988.setContent(html_14d072a587541ca1907acdc215b3c869);
+            
+        
+
+        marker_186c099436693a35d638945f20fed3c3.bindPopup(popup_487057ad2dfb268f0a98baaa9ae6c988)
+        ;
+
+        
+    
+    
+            var marker_ba008f3e7576b5f34f9c5308c34cb8df = L.marker(
+                [32.178302, 34.927932],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_893e3c840bbe4ce9801bcb835f534c86 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkblue", "prefix": "glyphicon"}
+            );
+            marker_ba008f3e7576b5f34f9c5308c34cb8df.setIcon(icon_893e3c840bbe4ce9801bcb835f534c86);
+        
+    
+        var popup_5acfed52e34f28284ac2b66993fd8c0f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7c0d8701b4456530c31d36baaa4552ed = $(`<div id="html_7c0d8701b4456530c31d36baaa4552ed" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:13:07+00:00<br>Lat: 32.178302<br>Lon: 34.927932<br>Plate: 65239401<br>29488<br>2023-02-21 06:15:00+00:00</div>`)[0];
+                popup_5acfed52e34f28284ac2b66993fd8c0f.setContent(html_7c0d8701b4456530c31d36baaa4552ed);
+            
+        
+
+        marker_ba008f3e7576b5f34f9c5308c34cb8df.bindPopup(popup_5acfed52e34f28284ac2b66993fd8c0f)
+        ;
+
+        
+    
+    
+            var marker_f60cd20ae4bef2d46058f84a892232bf = L.marker(
+                [32.178302, 34.927932],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_83c20db73738481ae172be15cde4d8a1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkblue", "prefix": "glyphicon"}
+            );
+            marker_f60cd20ae4bef2d46058f84a892232bf.setIcon(icon_83c20db73738481ae172be15cde4d8a1);
+        
+    
+        var popup_b4c92b30664ef57273d6c285de69ee74 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_36535f3db4a2ab93733e9f10dda1d8af = $(`<div id="html_36535f3db4a2ab93733e9f10dda1d8af" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:13:07+00:00<br>Lat: 32.178302<br>Lon: 34.927932<br>Plate: 65239401<br>29488<br>2023-02-21 06:15:00+00:00</div>`)[0];
+                popup_b4c92b30664ef57273d6c285de69ee74.setContent(html_36535f3db4a2ab93733e9f10dda1d8af);
+            
+        
+
+        marker_f60cd20ae4bef2d46058f84a892232bf.bindPopup(popup_b4c92b30664ef57273d6c285de69ee74)
+        ;
+
+        
+    
+    
+            var marker_f5e60f8059da0c71329d586c6af6f38d = L.marker(
+                [32.178623, 34.927181],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_35225be5c8db35ddd963660f67716348 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkblue", "prefix": "glyphicon"}
+            );
+            marker_f5e60f8059da0c71329d586c6af6f38d.setIcon(icon_35225be5c8db35ddd963660f67716348);
+        
+    
+        var popup_0c2aff83829813a433c43690ce79af96 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a8ab01eef462263fbf0dbe3da16f9992 = $(`<div id="html_a8ab01eef462263fbf0dbe3da16f9992" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:15:00+00:00<br>Lat: 32.178623<br>Lon: 34.927181<br>Plate: 65239401<br>29488<br>2023-02-21 06:15:00+00:00</div>`)[0];
+                popup_0c2aff83829813a433c43690ce79af96.setContent(html_a8ab01eef462263fbf0dbe3da16f9992);
+            
+        
+
+        marker_f5e60f8059da0c71329d586c6af6f38d.bindPopup(popup_0c2aff83829813a433c43690ce79af96)
+        ;
+
+        
+    
+    
+            var marker_29c638c87ebed9b1461c61b5b8746e25 = L.marker(
+                [32.178623, 34.927181],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_0a39750d1eba9341f5f7ad526986a310 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkblue", "prefix": "glyphicon"}
+            );
+            marker_29c638c87ebed9b1461c61b5b8746e25.setIcon(icon_0a39750d1eba9341f5f7ad526986a310);
+        
+    
+        var popup_ced46accdab9455d5f7d89f6be0ea863 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_06e91612de51c3cdcf6638edfff11588 = $(`<div id="html_06e91612de51c3cdcf6638edfff11588" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:15:00+00:00<br>Lat: 32.178623<br>Lon: 34.927181<br>Plate: 65239401<br>29488<br>2023-02-21 06:15:00+00:00</div>`)[0];
+                popup_ced46accdab9455d5f7d89f6be0ea863.setContent(html_06e91612de51c3cdcf6638edfff11588);
+            
+        
+
+        marker_29c638c87ebed9b1461c61b5b8746e25.bindPopup(popup_ced46accdab9455d5f7d89f6be0ea863)
+        ;
+
+        
+    
+    
+            var marker_fad5d29c87dfd65a7d09cdc8171cf54e = L.marker(
+                [32.178623, 34.927181],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_acc78cf84925408ba8daebd706e04da0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkblue", "prefix": "glyphicon"}
+            );
+            marker_fad5d29c87dfd65a7d09cdc8171cf54e.setIcon(icon_acc78cf84925408ba8daebd706e04da0);
+        
+    
+        var popup_6c93fc2dc59e07dec52e908de20f8c65 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c6772b3d84d68085808267e4116f6a17 = $(`<div id="html_c6772b3d84d68085808267e4116f6a17" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:15:00+00:00<br>Lat: 32.178623<br>Lon: 34.927181<br>Plate: 65239401<br>29488<br>2023-02-21 06:15:00+00:00</div>`)[0];
+                popup_6c93fc2dc59e07dec52e908de20f8c65.setContent(html_c6772b3d84d68085808267e4116f6a17);
+            
+        
+
+        marker_fad5d29c87dfd65a7d09cdc8171cf54e.bindPopup(popup_6c93fc2dc59e07dec52e908de20f8c65)
+        ;
+
+        
+    
+    
+            var marker_1b32c471d692499ce047227bf286080d = L.marker(
+                [32.177738, 34.927661],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_6247591646f2ca8c845bd831256a0cde = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "lightblue", "prefix": "glyphicon"}
+            );
+            marker_1b32c471d692499ce047227bf286080d.setIcon(icon_6247591646f2ca8c845bd831256a0cde);
+        
+    
+        var popup_71bf5ad494ee7b5daf02e0cffbaa7db6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_078c38da690b1d45e18a77efcf671790 = $(`<div id="html_078c38da690b1d45e18a77efcf671790" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:10:17+00:00<br>Lat: 32.177738<br>Lon: 34.927661<br>Plate: 65242501<br>16812<br>2023-02-21 05:55:00+00:00</div>`)[0];
+                popup_71bf5ad494ee7b5daf02e0cffbaa7db6.setContent(html_078c38da690b1d45e18a77efcf671790);
+            
+        
+
+        marker_1b32c471d692499ce047227bf286080d.bindPopup(popup_71bf5ad494ee7b5daf02e0cffbaa7db6)
+        ;
+
+        
+    
+    
+            var marker_049d45371878b56be88cdc4d2682c2d9 = L.marker(
+                [32.177501, 34.927528],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_21bc783fc7c49a9134d181bc3bf4adb7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+            );
+            marker_049d45371878b56be88cdc4d2682c2d9.setIcon(icon_21bc783fc7c49a9134d181bc3bf4adb7);
+        
+    
+        var popup_8a9f7915da22d316b782bfaba902b03c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3b0c926f4704cb5a54a664e335f8f472 = $(`<div id="html_3b0c926f4704cb5a54a664e335f8f472" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:06:28+00:00<br>Lat: 32.177501<br>Lon: 34.927528<br>Plate: 65243101<br>7929<br>2023-02-21 05:00:00+00:00</div>`)[0];
+                popup_8a9f7915da22d316b782bfaba902b03c.setContent(html_3b0c926f4704cb5a54a664e335f8f472);
+            
+        
+
+        marker_049d45371878b56be88cdc4d2682c2d9.bindPopup(popup_8a9f7915da22d316b782bfaba902b03c)
+        ;
+
+        
+    
+    
+            var marker_ed9ca8eb3a42981c65d2efb477d4c816 = L.marker(
+                [32.178207, 34.927467],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_67a65a4701ea6539220c5eeece47c773 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+            );
+            marker_ed9ca8eb3a42981c65d2efb477d4c816.setIcon(icon_67a65a4701ea6539220c5eeece47c773);
+        
+    
+        var popup_d4c36b0f981eb5b1649e5147c8122449 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b840144e2fac444f5ed1ee6215960d7c = $(`<div id="html_b840144e2fac444f5ed1ee6215960d7c" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:25:00+00:00<br>Lat: 32.178207<br>Lon: 34.927467<br>Plate: 65243101<br>7924<br>2023-02-21 06:30:00+00:00</div>`)[0];
+                popup_d4c36b0f981eb5b1649e5147c8122449.setContent(html_b840144e2fac444f5ed1ee6215960d7c);
+            
+        
+
+        marker_ed9ca8eb3a42981c65d2efb477d4c816.bindPopup(popup_d4c36b0f981eb5b1649e5147c8122449)
+        ;
+
+        
+    
+    
+            var marker_ed4da8f60ffdfb174229346dccb4c8b5 = L.marker(
+                [32.178207, 34.927467],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_f73ca240c71d1e8a385017d625dd5d9b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+            );
+            marker_ed4da8f60ffdfb174229346dccb4c8b5.setIcon(icon_f73ca240c71d1e8a385017d625dd5d9b);
+        
+    
+        var popup_c31e781824fceeba8cf25b002ad73d06 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c440004b3dcf873ff7627740e970a521 = $(`<div id="html_c440004b3dcf873ff7627740e970a521" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:25:00+00:00<br>Lat: 32.178207<br>Lon: 34.927467<br>Plate: 65243101<br>7924<br>2023-02-21 06:30:00+00:00</div>`)[0];
+                popup_c31e781824fceeba8cf25b002ad73d06.setContent(html_c440004b3dcf873ff7627740e970a521);
+            
+        
+
+        marker_ed4da8f60ffdfb174229346dccb4c8b5.bindPopup(popup_c31e781824fceeba8cf25b002ad73d06)
+        ;
+
+        
+    
+    
+            var marker_d8d51e82e10c55bc8e720028006d5714 = L.marker(
+                [32.178207, 34.927467],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_999c5cc3c09cdf25ed3f62ad0b23777b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+            );
+            marker_d8d51e82e10c55bc8e720028006d5714.setIcon(icon_999c5cc3c09cdf25ed3f62ad0b23777b);
+        
+    
+        var popup_64d56e64e8443e4ee616270eac9dc0fc = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_643a8137a8dd5388b946892e8ef06e3a = $(`<div id="html_643a8137a8dd5388b946892e8ef06e3a" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:25:00+00:00<br>Lat: 32.178207<br>Lon: 34.927467<br>Plate: 65243101<br>7924<br>2023-02-21 06:30:00+00:00</div>`)[0];
+                popup_64d56e64e8443e4ee616270eac9dc0fc.setContent(html_643a8137a8dd5388b946892e8ef06e3a);
+            
+        
+
+        marker_d8d51e82e10c55bc8e720028006d5714.bindPopup(popup_64d56e64e8443e4ee616270eac9dc0fc)
+        ;
+
+        
+    
+    
+            var marker_b2f89f8a0afa1642beb981c9a57baa21 = L.marker(
+                [32.178207, 34.927467],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_02b1e62cdfdf76252ba123d28702045c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+            );
+            marker_b2f89f8a0afa1642beb981c9a57baa21.setIcon(icon_02b1e62cdfdf76252ba123d28702045c);
+        
+    
+        var popup_8575ecf76ce46ee8dd7ae87620357086 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_09d2062f5cc0a7c1023b2e88699cbcf1 = $(`<div id="html_09d2062f5cc0a7c1023b2e88699cbcf1" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:25:00+00:00<br>Lat: 32.178207<br>Lon: 34.927467<br>Plate: 65243101<br>7924<br>2023-02-21 06:30:00+00:00</div>`)[0];
+                popup_8575ecf76ce46ee8dd7ae87620357086.setContent(html_09d2062f5cc0a7c1023b2e88699cbcf1);
+            
+        
+
+        marker_b2f89f8a0afa1642beb981c9a57baa21.bindPopup(popup_8575ecf76ce46ee8dd7ae87620357086)
+        ;
+
+        
+    
+    
+            var marker_d941e0af4f4200e8b18e1cd4af7b6d74 = L.marker(
+                [32.178207, 34.927467],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_3869703448a88ee30c010ea55c84a770 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+            );
+            marker_d941e0af4f4200e8b18e1cd4af7b6d74.setIcon(icon_3869703448a88ee30c010ea55c84a770);
+        
+    
+        var popup_855a741ceeccfb2096335e43bc68a0f7 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3d9de7e7c592872bb24589040905daaa = $(`<div id="html_3d9de7e7c592872bb24589040905daaa" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:25:00+00:00<br>Lat: 32.178207<br>Lon: 34.927467<br>Plate: 65243101<br>7924<br>2023-02-21 06:30:00+00:00</div>`)[0];
+                popup_855a741ceeccfb2096335e43bc68a0f7.setContent(html_3d9de7e7c592872bb24589040905daaa);
+            
+        
+
+        marker_d941e0af4f4200e8b18e1cd4af7b6d74.bindPopup(popup_855a741ceeccfb2096335e43bc68a0f7)
+        ;
+
+        
+    
+    
+            var marker_0c38476c82e847fa680249f723263f40 = L.marker(
+                [32.178215, 34.927497],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_ef2e8c70fdd9c895ef2014e734699cf5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+            );
+            marker_0c38476c82e847fa680249f723263f40.setIcon(icon_ef2e8c70fdd9c895ef2014e734699cf5);
+        
+    
+        var popup_cf6ac52431dfcf59852adee5e8d04449 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_038f0ba7f78ea3af068133008de64f48 = $(`<div id="html_038f0ba7f78ea3af068133008de64f48" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:30:00+00:00<br>Lat: 32.178215<br>Lon: 34.927497<br>Plate: 65243101<br>7924<br>2023-02-21 06:30:00+00:00</div>`)[0];
+                popup_cf6ac52431dfcf59852adee5e8d04449.setContent(html_038f0ba7f78ea3af068133008de64f48);
+            
+        
+
+        marker_0c38476c82e847fa680249f723263f40.bindPopup(popup_cf6ac52431dfcf59852adee5e8d04449)
+        ;
+
+        
+    
+    
+            var marker_e62c8b2a6ccd98929e143fc104235d89 = L.marker(
+                [32.178226, 34.927436],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_32097abc181bc0e2d8fa2c567caea345 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkpurple", "prefix": "glyphicon"}
+            );
+            marker_e62c8b2a6ccd98929e143fc104235d89.setIcon(icon_32097abc181bc0e2d8fa2c567caea345);
+        
+    
+        var popup_84ed9b4f407c7c77bba7afe7add5d3bf = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bc0d3fdf0a613ec11c1a534155012bf2 = $(`<div id="html_bc0d3fdf0a613ec11c1a534155012bf2" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:25:00+00:00<br>Lat: 32.178226<br>Lon: 34.927436<br>Plate: 7284752<br>11097<br>2023-02-21 06:30:00+00:00</div>`)[0];
+                popup_84ed9b4f407c7c77bba7afe7add5d3bf.setContent(html_bc0d3fdf0a613ec11c1a534155012bf2);
+            
+        
+
+        marker_e62c8b2a6ccd98929e143fc104235d89.bindPopup(popup_84ed9b4f407c7c77bba7afe7add5d3bf)
+        ;
+
+        
+    
+    
+            var marker_a143ffbf5babdb7e7679eb5da589224c = L.marker(
+                [32.178226, 34.927436],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_498b4764530c541df3328af54ef3cb07 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkpurple", "prefix": "glyphicon"}
+            );
+            marker_a143ffbf5babdb7e7679eb5da589224c.setIcon(icon_498b4764530c541df3328af54ef3cb07);
+        
+    
+        var popup_83304d521abc65d274c6a0f6cf7aa9b0 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_84ebaaad1353f1fe839b017fe47062e2 = $(`<div id="html_84ebaaad1353f1fe839b017fe47062e2" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:25:00+00:00<br>Lat: 32.178226<br>Lon: 34.927436<br>Plate: 7284752<br>11097<br>2023-02-21 06:30:00+00:00</div>`)[0];
+                popup_83304d521abc65d274c6a0f6cf7aa9b0.setContent(html_84ebaaad1353f1fe839b017fe47062e2);
+            
+        
+
+        marker_a143ffbf5babdb7e7679eb5da589224c.bindPopup(popup_83304d521abc65d274c6a0f6cf7aa9b0)
+        ;
+
+        
+    
+    
+            var marker_c406ff00bdbee78f1ab5686aec1db17e = L.marker(
+                [32.178226, 34.927436],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_703c30b8996928669d70effdfb05067c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkpurple", "prefix": "glyphicon"}
+            );
+            marker_c406ff00bdbee78f1ab5686aec1db17e.setIcon(icon_703c30b8996928669d70effdfb05067c);
+        
+    
+        var popup_37cf5e66ffa8079ed18c7926c9056ba9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_27dc28191b86ae0862d562de3a592192 = $(`<div id="html_27dc28191b86ae0862d562de3a592192" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:25:00+00:00<br>Lat: 32.178226<br>Lon: 34.927436<br>Plate: 7284752<br>11097<br>2023-02-21 06:30:00+00:00</div>`)[0];
+                popup_37cf5e66ffa8079ed18c7926c9056ba9.setContent(html_27dc28191b86ae0862d562de3a592192);
+            
+        
+
+        marker_c406ff00bdbee78f1ab5686aec1db17e.bindPopup(popup_37cf5e66ffa8079ed18c7926c9056ba9)
+        ;
+
+        
+    
+    
+            var marker_c588f3c1a7fb70bf08ee342154bd54c7 = L.marker(
+                [32.178226, 34.927436],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_b030a969b02121cde828734897fc0f6b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkpurple", "prefix": "glyphicon"}
+            );
+            marker_c588f3c1a7fb70bf08ee342154bd54c7.setIcon(icon_b030a969b02121cde828734897fc0f6b);
+        
+    
+        var popup_3a7e28ac397b1e270b30b88bfe1fd466 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e57e12db7d66da4226e5648ede34d349 = $(`<div id="html_e57e12db7d66da4226e5648ede34d349" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:25:00+00:00<br>Lat: 32.178226<br>Lon: 34.927436<br>Plate: 7284752<br>11097<br>2023-02-21 06:30:00+00:00</div>`)[0];
+                popup_3a7e28ac397b1e270b30b88bfe1fd466.setContent(html_e57e12db7d66da4226e5648ede34d349);
+            
+        
+
+        marker_c588f3c1a7fb70bf08ee342154bd54c7.bindPopup(popup_3a7e28ac397b1e270b30b88bfe1fd466)
+        ;
+
+        
+    
+    
+            var marker_d0f748e387a0fe6abcc5d8f1b9e6c9f8 = L.marker(
+                [32.178226, 34.927436],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_7db4bc6330156dfea7ae63453972c845 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkpurple", "prefix": "glyphicon"}
+            );
+            marker_d0f748e387a0fe6abcc5d8f1b9e6c9f8.setIcon(icon_7db4bc6330156dfea7ae63453972c845);
+        
+    
+        var popup_7754cbe0c626a669c172194451c7b130 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_260379d0091271a213bac17f81714cf9 = $(`<div id="html_260379d0091271a213bac17f81714cf9" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:25:00+00:00<br>Lat: 32.178226<br>Lon: 34.927436<br>Plate: 7284752<br>11097<br>2023-02-21 06:30:00+00:00</div>`)[0];
+                popup_7754cbe0c626a669c172194451c7b130.setContent(html_260379d0091271a213bac17f81714cf9);
+            
+        
+
+        marker_d0f748e387a0fe6abcc5d8f1b9e6c9f8.bindPopup(popup_7754cbe0c626a669c172194451c7b130)
+        ;
+
+        
+    
+    
+            var marker_acfeab6bd5d953cc4973b14b7e130bf3 = L.marker(
+                [32.178226, 34.927436],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_035ee3badfc016d4d88a24697800bf5f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkpurple", "prefix": "glyphicon"}
+            );
+            marker_acfeab6bd5d953cc4973b14b7e130bf3.setIcon(icon_035ee3badfc016d4d88a24697800bf5f);
+        
+    
+        var popup_2304f92c30ac2e8750f83c58ea0c9f71 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2996691bd04d5f124bc4b3b2aed17a58 = $(`<div id="html_2996691bd04d5f124bc4b3b2aed17a58" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:30:00+00:00<br>Lat: 32.178226<br>Lon: 34.927436<br>Plate: 7284752<br>11097<br>2023-02-21 06:30:00+00:00</div>`)[0];
+                popup_2304f92c30ac2e8750f83c58ea0c9f71.setContent(html_2996691bd04d5f124bc4b3b2aed17a58);
+            
+        
+
+        marker_acfeab6bd5d953cc4973b14b7e130bf3.bindPopup(popup_2304f92c30ac2e8750f83c58ea0c9f71)
+        ;
+
+        
+    
+    
+            var marker_04d9a2ac0a9fb471f06279b048e43bbc = L.marker(
+                [32.178226, 34.927436],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_cd58504d95d4ff3f15cb3eaa0a0d6aae = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkpurple", "prefix": "glyphicon"}
+            );
+            marker_04d9a2ac0a9fb471f06279b048e43bbc.setIcon(icon_cd58504d95d4ff3f15cb3eaa0a0d6aae);
+        
+    
+        var popup_0eea95db39c6330d4c623f67c6f2cfab = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_dfe6cc5581910dc527d5bd79c3276dd4 = $(`<div id="html_dfe6cc5581910dc527d5bd79c3276dd4" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:30:00+00:00<br>Lat: 32.178226<br>Lon: 34.927436<br>Plate: 7284752<br>11097<br>2023-02-21 06:30:00+00:00</div>`)[0];
+                popup_0eea95db39c6330d4c623f67c6f2cfab.setContent(html_dfe6cc5581910dc527d5bd79c3276dd4);
+            
+        
+
+        marker_04d9a2ac0a9fb471f06279b048e43bbc.bindPopup(popup_0eea95db39c6330d4c623f67c6f2cfab)
+        ;
+
+        
+    
+    
+            var marker_81976d5f1e89a5e5ab7bd229e7f22d4b = L.marker(
+                [32.178226, 34.927436],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_a56c54710491cea3305472ac88cc1b7d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkpurple", "prefix": "glyphicon"}
+            );
+            marker_81976d5f1e89a5e5ab7bd229e7f22d4b.setIcon(icon_a56c54710491cea3305472ac88cc1b7d);
+        
+    
+        var popup_bcd7e5808fc52a0d46702c4c17d61b8e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_668f2927df919bf963b02c8980d72642 = $(`<div id="html_668f2927df919bf963b02c8980d72642" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:30:00+00:00<br>Lat: 32.178226<br>Lon: 34.927436<br>Plate: 7284752<br>11097<br>2023-02-21 06:30:00+00:00</div>`)[0];
+                popup_bcd7e5808fc52a0d46702c4c17d61b8e.setContent(html_668f2927df919bf963b02c8980d72642);
+            
+        
+
+        marker_81976d5f1e89a5e5ab7bd229e7f22d4b.bindPopup(popup_bcd7e5808fc52a0d46702c4c17d61b8e)
+        ;
+
+        
+    
+    
+            var marker_8de7de0f75ae7d0b16e3c14e3bfa72fb = L.marker(
+                [32.178226, 34.927436],
+                {}
+            ).addTo(map_33c611574f451bdc666e1420cce555f7);
+        
+    
+            var icon_d208f150c92fa615452361be3d77d251 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkpurple", "prefix": "glyphicon"}
+            );
+            marker_8de7de0f75ae7d0b16e3c14e3bfa72fb.setIcon(icon_d208f150c92fa615452361be3d77d251);
+        
+    
+        var popup_596c82646075a32d8604977ef33bda74 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c85a3e58f550aab0b1416010b374b385 = $(`<div id="html_c85a3e58f550aab0b1416010b374b385" style="width: 100.0%; height: 100.0%;">Recorded at: 2023-02-21 06:30:00+00:00<br>Lat: 32.178226<br>Lon: 34.927436<br>Plate: 7284752<br>11097<br>2023-02-21 06:30:00+00:00</div>`)[0];
+                popup_596c82646075a32d8604977ef33bda74.setContent(html_c85a3e58f550aab0b1416010b374b385);
+            
+        
+
+        marker_8de7de0f75ae7d0b16e3c14e3bfa72fb.bindPopup(popup_596c82646075a32d8604977ef33bda74)
+        ;
+
+        
+    
+</script>
+</html>
