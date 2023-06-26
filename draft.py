@@ -19,9 +19,9 @@ parameters = SimpleNamespace(**{
     "line_short_name": "149",
     "agency": "מטרופולין",
     "originated_at": "כפר סבא",
-    "date": datetime.date(2023, 2, 21),
-    "start_hour": 6,
-    "end_hour": 9,
+    "date": datetime.date(2023, 6, 26),
+    "start_hour": 17,
+    "end_hour": 19,
     # "line_refs": "7700"
     "gtfs_route_mkt": "12149",
     # filter by specific gtfs_route_ids
@@ -112,8 +112,8 @@ def get_siri_query_params(line_refs, operator_refs, parameters):
     return {
         "recorded_at_time_from": recorded_at_time_from,
         "recorded_at_time_to": recorded_at_time_to,
-        "gtfs_route__line_refs": line_refs,
-        "gtfs_route__operator_refs": operator_refs,
+        "siri_routes__line_ref": line_refs,
+        "siri_routes__operator_ref": operator_refs,
         "lon__greater_or_equal": lon_lat_first_stop["lon"] - EPSILON_lon,
         "lon__lower_or_equal": lon_lat_first_stop["lon"] + EPSILON_lon,
         "lat__greater_or_equal": lon_lat_first_stop["lat"] - EPSILON_lat,
@@ -242,6 +242,9 @@ def main():
     create_map(data=down_results, path="down.html")
     results.append(pd.DataFrame(records_list))
     create_map(data=pd.concat(results), path="concat.html")
+    real_rides = stride.iterate(
+        ""
+    )
     print(results)
 
     # plot the locations on openstreetmap
