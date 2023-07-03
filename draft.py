@@ -14,14 +14,15 @@ ETA_lat = EPSILON_lat*outer_factor
 TOP_FORWARD_STATIONS = 10000
 
 
+
 # case parameters
 parameters = SimpleNamespace(**{
     "line_short_name": "149",
     "agency": "מטרופולין",
     "originated_at": "כפר סבא",
-    "date": datetime.date(2023, 6, 26),
-    "start_hour": 17,
-    "end_hour": 19,
+    "date": datetime.date(2023, 6, 28),
+    "start_hour": 4,
+    "end_hour": 6,
     # "line_refs": "7700"
     "gtfs_route_mkt": "12149",
     # filter by specific gtfs_route_ids
@@ -214,6 +215,11 @@ def get_siri_query_params_out(line_refs, operator_refs,parameters):
     return {"right": right_params, "left": left_params, "up": up_params, "down": down_params}
 
 
+def rank_results(joint_results):
+    pass
+
+
+
 def main():
     siri_records = stride.iterate('/siri_vehicle_locations/list',
                                   params=get_siri_query_params(line_refs=close_gtfs_rides_line_ref[0], operator_refs=close_gtfs_rides_operator_ref[0],parameters=parameters), limit=TOP_FORWARD_STATIONS)
@@ -241,13 +247,20 @@ def main():
     create_map(data=up_results, path="up.html")
     create_map(data=down_results, path="down.html")
     results.append(pd.DataFrame(records_list))
-    create_map(data=pd.concat(results), path="concat.html")
-    real_rides = stride.iterate(
-        ""
-    )
+    joint_data = pd.concat(results)
+    # create another ranking strategy
+    # join between the siri information to gtfs information - how?
+    create_map(data=joint_data, path="concat.html")
+    # real_rides = stride.iterate(
+    #     ""
+    # )
     print(results)
 
+
+    # create planned ride list, and to see if it's matched or unmatched
+
     # plot the locations on openstreetmap
+
 
 
 if __name__ == '__main__':
